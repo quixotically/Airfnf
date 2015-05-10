@@ -2,23 +2,28 @@
 
 [Heroku link][heroku]
 
-[heroku]: http://flux-capacitr.herokuapp.com
+##################FILL IN
+[heroku]:
 
 ## Minimum Viable Product
-Flux-capacitr is a clone of Tumblr built on Rails and Backbone. Users can:
+CloudBed is a clone of Airbnb built on Rails and Backbone.
 
-<!-- This is a Markdown checklist. Use it to keep track of your progress! -->
+Users can:
+- [ x] Create accounts
+- [ x] Create sessions (log in)
+  [ x] List rentals
+  [ ] Approve bookings
+  [ ] Request to book rentals
+  [ ] Save rental to wish list
+  [ ] Rate rentals
+  [ ] Comment on rentals
 
-- [x] Create accounts
-- [x] Create sessions (log in)
-- [x] Create blogs
-- [x] Create blog posts
-- [ ] View blogs and posts
-- [ ] Subscribe to blogs
-- [ ] View a feed of subscribed blogs
-- [ ] Tag blog posts
-- [ ] Search for blogs by title
-- [ ] Search for posts by tag
+Anyone can:
+- [ ] Search for rentals by Location, Date, and Guest Count
+- [ ] Filter search further by Room Type, Price Range, and Size
+- [ ] View rentals
+- [ ] Drag the map to reveal local properties
+- [ ] Click on a property to reveal its details and comments
 
 ## Design Docs
 * [View Wireframes][views]
@@ -29,12 +34,9 @@ Flux-capacitr is a clone of Tumblr built on Rails and Backbone. Users can:
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Blog Creation (~1 day)
+### Phase 1: User Authentication, Listing Creation (~1 day)
 I will implement user authentication in Rails based on the practices learned at
-App Academy. By the end of this phase, users will be able to create blogs using
-a simple text form in a Rails view. The most important part of this phase will
-be pushing the app to Heroku and ensuring that everything works before moving on
-to phase 2.
+App Academy. By the end of this phase, users will be able to create listings using a simple text form in a Rails view. The most important part of this phase will be pushing the app to Heroku and ensuring that everything works before moving on to phase 2.
 
 [Details][phase-one]
 
@@ -88,4 +90,3 @@ collections, but they will fetch from the new `search` routes.
 [phase-three]: ./docs/phases/phase3.md
 [phase-four]: ./docs/phases/phase4.md
 [phase-five]: ./docs/phases/phase5.md
-
