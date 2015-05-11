@@ -21,7 +21,7 @@ end_date    | date      | not null
 room_type   | string    | not null
 price       | integer   | not null
 accommodates| integer   | not null
-city        | string    | not null
+location    | string    | not null
 
 ## requests
 column name | data type | details
