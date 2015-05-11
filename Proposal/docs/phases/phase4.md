@@ -1,20 +1,30 @@
-# Phase 4: User Feeds
+# Phase 4: Reviewing Guests and Hosts
 
 ## Rails
 ### Models
+ReviewFromGuest
+ReviewFromHost
 
 ### Controllers
-Api::PostsController (feed)
+Api::ReviewFromGuestsController
+Api::ReviewFromHostsController
 
 ### Views
-posts/feed.json.jbuilder
+listings/review_from_guests.json.jbuilder
+users/review_from_hosts.json.jbuilder
+users/review_from_guests.json.jbuilder
 
 ## Backbone
 ### Models
+ReviewFromGuest
+ReviewFromHost
 
 ### Collections
+ReviewFromGuests
+ReviewFromHosts
 
 ### Views
-* FeedShow (composite view, contains PostsIndex subview)
+* ReviewsShow (composite view, contains ReviewsFromGuests/Hosts subviews)
+* ListingReviewsShow (subview of ListingShow)
 
 ## Gems/Libraries

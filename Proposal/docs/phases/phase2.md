@@ -1,30 +1,25 @@
-# Phase 2: Viewing Listings and Posts
+# Phase 2: Viewing Users and Listings
 
 ## Rails
 ### Models
-* Requests
 
 ### Controllers
-Api::BlogsController (create, destroy, index, show)
-Api::PostsController (create, destroy, show, update)
+Api::ListingsController (create, destroy, index, show)
 
 ### Views
-* blogs/show.json.jbuilder
+* users/show.json.jbuilder
+* listings/show.json.jbuilder
 
 ## Backbone
 ### Models
-* Blog (parses nested `posts` association)
-* Post
+* User
+* Listing (parses nested `reviews_from_guests` association)
 
 ### Collections
-* Blogs
-* Posts
+* Users
+* Listings
 
 ### Views
-* BlogForm
-* BlogShow (composite view, contains PostsIndex subview)
-* PostsIndex (composite view, contains PostsIndexItem subviews)
-* PostsIndexItem
-* PostShow
 
 ## Gems/Libraries
+* Filepicker

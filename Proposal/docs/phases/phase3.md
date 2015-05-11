@@ -1,21 +1,23 @@
-# Phase 3: Editing and Displaying Posts
+# Phase 3: Request Creation and Approval
 
 ## Rails
 ### Models
+* Request
 
 ### Controllers
+Api::RequestsController (create, destroy, show, update)
 
 ### Views
+* requests/show.json.jbuilder
 
 ## Backbone
 ### Models
+* Request
 
 ### Collections
 
 ### Views
-* PostForm
+* RequestForm
+* RequestsIndex
 
 ## Gems/Libraries
-* Filepicker
-* Markdown-js
-* Bootstrap Markdown

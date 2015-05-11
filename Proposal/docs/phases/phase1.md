@@ -1,4 +1,4 @@
-# Phase 1: User Authentication, Basic Listings
+# Phase 1: User Authentication, Listing Creation
 
 ## Rails
 ### Models

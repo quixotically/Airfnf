@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-[heroku]:
+[heroku]: 
 
 ## Minimum Viable Product
 Airbnb Clone is a clone of Airbnb built on Rails and Backbone.
@@ -37,17 +37,17 @@ App Academy. By the end of this phase, users will be able to create listings usi
 
 [Details][phase-one]
 
-### Phase 2: Request Creation and Approval  (~2 days)
-I will add API routes to serve listing data as JSON, then add Backbone models and collections that fetch data from those routes. By the end of this phase, users will be able to request to book a listing, and hosts will be able to select a single request while Rails automatically denies all other requests.
+### Phase 2: Viewing Users and Listings (~2 days)
+I will add API routes to serve listing and user data as JSON, then add Backbone models and collections that fetch data from those routes. By the end of this phase, users will be able to view listings and other users, all inside a single Backbone app. I also plan to integrate Filepicker for file upload so users can add images to their profiles and listings.
 
 [Details][phase-two]
 
-### Phase 3: Viewing Users and Listings (~2 days)
-By the end of this phase, users will be able to view listings and other users, all inside a single Backbone app. I also plan to integrate Filepicker for file upload so users can add images to their profiles and listings.
+### Phase 3: Request Creation and Approval  (~1-2 days)
+By the end of this phase, users will be able to request to book a listing, and hosts will be able to select a single request while Rails automatically denies all other requests.
 
 [Details][phase-three]
 
-### Phase 4: Reviewing Guests and Hosts (~1-2 days)
+### Phase 4: Reviewing Guests and Hosts (~2 days)
 I'll start by creating ReviewFromGuest and ReviewFromHost models, since each type of review contains differing data. Then, I'll create Backbone models and collections of each type of review and create review subviews. By the end of this phase, hosts will be able to create reviews of guests using a simple form in a Rails view. Guests will be able to create reviews of listings, which belong to hosts.
 
 [Details][phase-four]
