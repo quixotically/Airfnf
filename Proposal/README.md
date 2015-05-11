@@ -1,29 +1,26 @@
-# Flux-capacitr
+# Airbnb Clone
 
 [Heroku link][heroku]
 
-##################FILL IN
 [heroku]:
 
 ## Minimum Viable Product
-CloudBed is a clone of Airbnb built on Rails and Backbone.
+Airbnb Clone is a clone of Airbnb built on Rails and Backbone.
 
 Users can:
 - [ x] Create accounts
 - [ x] Create sessions (log in)
-  [ x] List rentals
+  [ x] Create listings
   [ ] Approve bookings
-  [ ] Request to book rentals
-  [ ] Save rental to wish list
-  [ ] Rate rentals
-  [ ] Comment on rentals
+  [ ] Review guests
+  [ ] Request to book listings
+  [ ] Review hosts
 
 Anyone can:
-- [ ] Search for rentals by Location, Date, and Guest Count
+- [ ] Search for listings by Location, Date, and Guest Count
 - [ ] Filter search further by Room Type, Price Range, and Size
-- [ ] View rentals
-- [ ] Drag the map to reveal local properties
-- [ ] Click on a property to reveal its details and comments
+- [ ] View listings
+- [ ] Drag the map to reveal local listings
 
 ## Design Docs
 * [View Wireframes][views]
@@ -75,6 +72,10 @@ collections, but they will fetch from the new `search` routes.
 [Details][phase-five]
 
 ### Bonus Features (TBD)
+  [ ] Save listing to a wish list
+  [ ] View wish lists on user profiles
+  [ ] Instant book feature
+
 - [ ] "Like" button and counter for posts
 - [ ] Custom blog urls
 - [ ] Pagination/infinite scroll

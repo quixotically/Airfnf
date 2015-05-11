@@ -1,7 +1,8 @@
-# Phase 2: Viewing Blogs and Posts
+# Phase 2: Viewing Listings and Posts
 
 ## Rails
 ### Models
+* Requests
 
 ### Controllers
 Api::BlogsController (create, destroy, index, show)
