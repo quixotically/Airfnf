@@ -1,11 +1,11 @@
-# Airbnb Clone
+# Airfnf
 
 [Heroku link][heroku]
 
-[heroku]: 
+[heroku]:
 
 ## Minimum Viable Product
-Airbnb Clone is a clone of Airbnb built on Rails and Backbone.
+Airfnf is a clone of Airbnb built on Rails and Backbone.
 
 Users can:
 - [ ] Create accounts
