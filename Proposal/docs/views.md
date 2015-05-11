@@ -1,26 +1,34 @@
 # View Wireframes
 
+## Listing Form
+![listing-form]
+
+## Listing Show
+![listing-show]
+
 ## New Session
 ![new-session]
 
-## Feed Show (landing page)
-![feed-show]
+## New User Form
+![new-user-form]
 
-## Blog Show
-![blog-show]
+## Review Form
+![review-form]
 
-## Post Show
-![post-show]
+## Search page (landing page)
+![search-page]
 
-## Post Form
-![post-form]
-
-## Search Results
+## Search results
 ![search-results]
 
+## User Show
+![user-show]
+
+[listing-form]: ./wireframes/listing_form.png
+[listing-show]: ./wireframes/listing_show.png
 [new-session]: ./wireframes/new_session.png
-[feed-show]: ./wireframes/feed_show.png
-[blog-show]: ./wireframes/blog_show.png
-[post-show]: ./wireframes/post_show.png
-[post-form]: ./wireframes/post_form.png
+[new-user-form]: ./wireframes/new_user_form.png
+[review-form]: ./wireframes/review_form.png
+[search-page]: ./wireframes/root_page.png
 [search-results]: ./wireframes/search_results.png
+[user-show]: ./wireframes/user_show.png
