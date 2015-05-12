@@ -10,11 +10,11 @@ Airfnf is a clone of Airbnb built on Rails and Backbone.
 Users can:
 - [ ] Create accounts
 - [ ] Create sessions (log in)
-  [ ] Create listings
-  [ ] Approve bookings
-  [ ] Request to book listings
-  [ ] Review guests
-  [ ] Review hosts
+- [ ] Create listings
+- [ ] Approve bookings
+- [ ] Request to book listings
+- [ ] Review guests
+- [ ] Review hosts
 
 Anyone can:
 - [ ] Search for listings by Location, Date, and Guest Count
@@ -26,8 +26,8 @@ Anyone can:
 * [View Wireframes][views]
 * [DB schema][schema]
 
-[views]: ./docs/views.md
-[schema]: ./docs/schema.md
+[views]: ./Proposal/docs/views.md
+[schema]: ./Proposal/docs/schema.md
 
 ## Implementation Timeline
 
@@ -59,16 +59,16 @@ I'll start by creating a Rails Review model. Then, I'll create Backbone Review m
 [Details][phase-five]
 
 ### Bonus Features (TBD)
-  [ ] Repopulate local listings upon scrolling the map
-  [ ] Save listing to a wish list
-  [ ] View wish lists on user profiles
-  [ ] Instant book feature
+- [ ] Repopulate local listings upon scrolling the map
+- [ ] Save listing to a wish list
+- [ ] View wish lists on user profiles
+- [ ] Instant book feature
 - [ ] Multiple sessions/session management
 - [ ] User avatars
 - [ ] Typeahead search bar
 
-[phase-one]: ./docs/phases/phase1.md
-[phase-two]: ./docs/phases/phase2.md
-[phase-three]: ./docs/phases/phase3.md
-[phase-four]: ./docs/phases/phase4.md
-[phase-five]: ./docs/phases/phase5.md
+[phase-one]: ./Proposal/docs/phases/phase1.md
+[phase-two]: ./Proposal/docs/phases/phase2.md
+[phase-three]: ./Proposal/docs/phases/phase3.md
+[phase-four]: ./Proposal/docs/phases/phase4.md
+[phase-five]: ./Proposal/docs/phases/phase5.md
