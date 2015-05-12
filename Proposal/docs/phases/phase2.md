@@ -4,7 +4,7 @@
 ### Models
 
 ### Controllers
-Api::ListingsController (create, destroy, index, show)
+* Api::UsersController (show)
 
 ### Views
 * users/show.json.jbuilder
@@ -13,13 +13,15 @@ Api::ListingsController (create, destroy, index, show)
 ## Backbone
 ### Models
 * User
-* Listing (parses nested `reviews_from_guests` association)
+* Listing (parses nested `reviews` association)
 
 ### Collections
 * Users
 * Listings
 
 ### Views
+* UserShow
+* ListingShow
 
 ## Gems/Libraries
 * Filepicker

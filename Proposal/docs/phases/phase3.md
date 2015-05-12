@@ -5,7 +5,7 @@
 * Request
 
 ### Controllers
-Api::RequestsController (create, destroy, show, update)
+* Api::RequestsController (create, destroy, show, update)
 
 ### Views
 * requests/show.json.jbuilder

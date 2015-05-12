@@ -6,15 +6,15 @@
 * Listing
 
 ### Controllers
-* UsersController (create, new)
 * SessionsController (create, new, destroy)
-* ListingsController (create, new, show)
+* Api::UsersController (create, new)
+* Api::ListingsController (create, new, destroy, index, show)
 
 ### Views
 * users/new.html.erb
 * session/new.html.erb
-* listings/new.html.erb
-* listings/show.html.erb
+* listings/new.json.jbuilder
+* listings/show.json.jbuilder
 
 ## Backbone
 ### Models

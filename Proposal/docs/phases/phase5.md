@@ -1,19 +1,24 @@
-# Phase 5: Searching for Listings and Filtering
+# Phase 5: Reviewing Guests and Hosts
 
 ## Rails
 ### Models
+* Review
 
 ### Controllers
-Api::ListingsController (search)
+* Api::ReviewsController (new, create, index)
 
 ### Views
+* reviews/new.json.jbuilder
+* reviews/index.json.jbuilder
 
 ## Backbone
 ### Models
+* Review
 
 ### Collections
+* Reviews
 
 ### Views
-* SearchShow (composite view, contains ListingsIndex subview)
+* ReviewsIndex
 
 ## Gems/Libraries

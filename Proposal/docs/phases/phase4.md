@@ -1,30 +1,19 @@
-# Phase 4: Reviewing Guests and Hosts
+# Phase 4: Searching for Listings and Filtering
 
 ## Rails
 ### Models
-ReviewFromGuest
-ReviewFromHost
 
 ### Controllers
-Api::ReviewFromGuestsController
-Api::ReviewFromHostsController
+* Api::ListingsController (search)
 
 ### Views
-listings/review_from_guests.json.jbuilder
-users/review_from_hosts.json.jbuilder
-users/review_from_guests.json.jbuilder
 
 ## Backbone
 ### Models
-ReviewFromGuest
-ReviewFromHost
 
 ### Collections
-ReviewFromGuests
-ReviewFromHosts
 
 ### Views
-* ReviewsShow (composite view, contains ReviewsFromGuests/Hosts subviews)
-* ListingReviewsShow (subview of ListingShow)
+* SearchShow (composite view, contains ListingsIndex subview)
 
 ## Gems/Libraries
