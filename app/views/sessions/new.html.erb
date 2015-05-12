@@ -1,8 +1,10 @@
-<form>
+<form action="<%= session_url %>" method="post">
   <%= csrf_html %>
   <label for="email">Email</label>
     <input type="text" name="user[email]" id="email">
+  <br>
   <label for="password">Password</label>
     <input type="password" name="user[password]" id="password">
+  <br>
   <button>Sign In</button>
 </form>

@@ -1,8 +1,9 @@
+<a href="<%= root_url %>">Home (logo)</a>
 <% if signed_in? %>
   <%= current_user.username %>
   <form action="<%= session_url %>" method="post">
     <%= csrf_html %>
-    <input type="hidden" method="_method" value="delete">
+    <input type="hidden" name="_method" value="delete">
     <button>Sign Out</button>
   </form>
 <% else %>
