@@ -1,0 +1,11 @@
+<% if signed_in? %>
+  <%= current_user.username %>
+  <form action="<%= session_url %>" method="post">
+    <%= csrf_html %>
+    <input type="hidden" method="_method" value="delete">
+    <button>Sign Out</button>
+  </form>
+<% else %>
+  <a href="<%= new_user_url %>">Sign Up</a>
+  <a href="<%= new_session_url %>">Sign In</a>
+<% end %>
