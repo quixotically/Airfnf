@@ -60,6 +60,7 @@ I'll start by creating a Rails Review model. Then, I'll create Backbone Review m
 
 ### Bonus Features (TBD)
 - [ ] Repopulate local listings upon scrolling the map
+- [ ] Logo
 - [ ] Save listing to a wish list
 - [ ] View wish lists on user profiles
 - [ ] Instant book feature

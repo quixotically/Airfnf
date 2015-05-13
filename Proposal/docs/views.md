@@ -1,10 +1,7 @@
 # View Wireframes
 
-## Listing Form
-![listing-form]
-
-## Listing Show
-![listing-show]
+## Search page (landing page)
+![search-page]
 
 ## New Session
 ![new-session]
@@ -12,17 +9,20 @@
 ## New User Form
 ![new-user-form]
 
-## Review Form
-![review-form]
+## User Show
+![user-show]
 
-## Search page (landing page)
-![search-page]
+## Listing Form
+![listing-form]
+
+## Listing Show
+![listing-show]
 
 ## Search results
 ![search-results]
 
-## User Show
-![user-show]
+## Review Form
+![review-form]
 
 [listing-form]: ./wireframes/listing_form.png
 [listing-show]: ./wireframes/listing_show.png
