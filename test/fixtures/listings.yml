@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  owner_id: 1
+  room_type: MyString
+  price: 1
+  accommodates: 1
+  location: MyString
+
+two:
+  owner_id: 1
+  room_type: MyString
+  price: 1
+  accommodates: 1
+  location: MyString
