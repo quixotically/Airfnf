@@ -6,13 +6,23 @@ Airfnf.Routers.Router = Backbone.Router.extend({
 
   routes: {
     '': 'home',
+    'session/new': 'sessionNew',
+    'users/new': 'userNew',
     'listings': 'listingsIndex',
     'listings/new': 'listingNew',
     'listings/:id': 'listingShow'
   },
 
   home: function () {
-    this._swapView(new Airfnf.Views.Home())
+    this._swapView(new Airfnf.Views.Home());
+  },
+
+  sessionNew: function () {
+    this._swapView(new Airfnf.Views.SessionNew());
+  },
+
+  userNew: function () {
+    this._swapView(new Airfnf.Views.UserNew());
   },
 
   listingsIndex: function () {
