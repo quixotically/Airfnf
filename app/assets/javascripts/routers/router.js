@@ -9,25 +9,22 @@ Airfnf.Routers.Router = Backbone.Router.extend({
 
   routes: {
     '': 'home',
-    'session/new': 'sessionNew',
-    'users/new': 'userNew',
-    'users/:id': 'userShow',
     'listings': 'listingsIndex',
     'listings/new': 'listingNew',
-    'listings/:id': 'listingShow'
+    'listings/:id': 'listingShow',
+    'users/new': 'userNew',
+    'users/:id': 'userShow',
+    'session/new': 'sessionNew'
   },
 
   home: function () {
+    var callback = this.home.bind(this);
+    if (!this._requireSignedIn(callback)) { return; }
+
     this._swapView(new Airfnf.Views.Home());
   },
 
-  sessionNew: function () {
-    this._swapView(new Airfnf.Views.SessionNew());
-  },
-
-  userNew: function () {
-    this._swapView(new Airfnf.Views.UserNew());
-  },
+  // listings routes
 
   listingsIndex: function () {
     var view = Airfnf.Views.ListingsIndex({
@@ -56,6 +53,70 @@ Airfnf.Routers.Router = Backbone.Router.extend({
     });
 
     this._swapView(view);
+  },
+
+  // user and session routes
+
+  userNew: function () {
+    if (!this._requireSignedOut()) { return; }
+
+    var user = new Airfnf.Models.User();
+
+    var view = new Airfnf.Views.UserNew({
+      model: user,
+      collection: this.users
+    });
+
+    this._swapView(view);
+  },
+
+  userShow: function (id) {
+    var callback = this.show.bind(this, id);
+    if (!this._requireSignedIn(callback)) { return; }
+
+    var user = this.users.getAndFetch(id);
+
+    var view = new Airfnf.Views.UserShow({
+      model: user
+    });
+
+    this._swapView(view);
+  },
+
+  sessionNew: function (callback) {
+    if (!this._requireSignedOut(callback)) { return; }
+
+    var view = new Airfnf.Views.SessionNew({
+      callback: callback
+    });
+
+    this._swapView(view);
+  },
+
+  // helpers
+
+  _requireSignedIn: function (callback) {
+    if (!Airfnf.currentUser.isSignedIn()) {
+      callback = callback || this._goHome.bind(this);
+      this.sessionNew(callback);
+      return false;
+    }
+
+    return true;
+  },
+
+  _requireSignedOut: function (callback) {
+    if (Airfnf.currentUser.isSignedIn()) {
+      callback = callback || this._goHome.bind(this);
+      callback();
+      return false;
+    }
+
+    return true;
+  },
+
+  _goHome: function () {
+    Backbone.history.navigate('', { trigger: true });
   },
 
   _swapView: function (view) {

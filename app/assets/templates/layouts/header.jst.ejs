@@ -1,6 +1,11 @@
 <a href="#">Home (logo)</a>
 
-<a href="users/new">Sign Up</a>
-<a href="session/new">Sign In</a>
-
+<% if (Airfnf.currentUser.isSignedIn()) { %>
+  Signed in as:
+  <a href="#/users/<%= Airfnf.currentUser.id %>"><%= Airfnf.currentUser.escape("username") %></a>
+  <a href="#" id="sign-out-link">Sign Out</a>
+<% } else { %>
+  <a href="#/users/new">Sign Up</a>
+  <a href="#/session/new">Sign In</a>
+<% } %>
 <a href="#/listings/new">List Your Space</a>
