@@ -2,12 +2,16 @@ Airfnf.Routers.Router = Backbone.Router.extend({
   initialize: function () {
     this.$rootEl = $("#content");
     this.listings = new Airfnf.Collections.Listings();
+    this.listings.fetch();
+    this.users = new Airfnf.Collections.Users();
+    this.users.fetch();
   },
 
   routes: {
     '': 'home',
     'session/new': 'sessionNew',
     'users/new': 'userNew',
+    'users/:id': 'userShow',
     'listings': 'listingsIndex',
     'listings/new': 'listingNew',
     'listings/:id': 'listingShow'
@@ -26,8 +30,6 @@ Airfnf.Routers.Router = Backbone.Router.extend({
   },
 
   listingsIndex: function () {
-    this.listings.fetch();
-
     var view = Airfnf.Views.ListingsIndex({
       collection: this.listings
     });

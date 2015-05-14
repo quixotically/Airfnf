@@ -44,7 +44,7 @@ Airfnf.Models.CurrentUser = Airfnf.Models.User.extend({
     });
   },
 
-  signOut: function(options){
+  signOut: function (options) {
     var model = this;
 
     $.ajax({
@@ -58,7 +58,7 @@ Airfnf.Models.CurrentUser = Airfnf.Models.User.extend({
     });
   },
 
-  fireSessionEvent: function(){
+  fireSessionEvent: function () {
     if(this.isSignedIn()){
       this.trigger("signIn");
       console.log("currentUser is signed in!", this);
@@ -67,5 +67,4 @@ Airfnf.Models.CurrentUser = Airfnf.Models.User.extend({
       console.log("currentUser is signed out!", this);
     }
   }
-
 });
