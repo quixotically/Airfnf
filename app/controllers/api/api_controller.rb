@@ -5,5 +5,5 @@ class Api::ApiController < ApplicationController
   #   unless signed_in?
   #     render json: ["You must be signed in to perform that action."], status: :unauthorized
   #   end
-  end
+  # end
 end

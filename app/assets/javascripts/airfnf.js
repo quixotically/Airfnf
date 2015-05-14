@@ -8,9 +8,8 @@ window.Airfnf = {
     this.currentUser.fetch();
 
     this.header = new Airfnf.Views.Header({ el: "#header" });
-    this.router = new Airfnf.Routers.Users({ $rootEl: $("#main") });
-
     new Airfnf.Routers.Router();
+
     Backbone.history.start();
   }
 }

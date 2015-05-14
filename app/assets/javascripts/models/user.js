@@ -1,10 +1,6 @@
 Airfnf.Models.User = Backbone.Model.extend({
   urlRoot: "/api/users",
-
-  username: function(){
-    return this.escape("username");
-  },
-
+  
   toJSON: function(){
     var json = { user: _.clone(this.attributes) };
     return json;

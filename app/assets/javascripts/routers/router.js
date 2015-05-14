@@ -1,10 +1,8 @@
 Airfnf.Routers.Router = Backbone.Router.extend({
   initialize: function () {
-    this.$rootEl = $("#content");
+    this.$rootEl = $("#main");
     this.listings = new Airfnf.Collections.Listings();
     this.listings.fetch();
-    this.users = new Airfnf.Collections.Users();
-    this.users.fetch();
   },
 
   routes: {
@@ -71,10 +69,11 @@ Airfnf.Routers.Router = Backbone.Router.extend({
   },
 
   userShow: function (id) {
-    var callback = this.show.bind(this, id);
+    var callback = this.userShow.bind(this, id);
     if (!this._requireSignedIn(callback)) { return; }
 
-    var user = this.users.getAndFetch(id);
+    var user = new Airfnf.Models.User({ id: id });
+    user.fetch();
 
     var view = new Airfnf.Views.UserShow({
       model: user
