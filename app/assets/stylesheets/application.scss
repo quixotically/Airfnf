@@ -1,7 +1,4 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
  * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
  *
@@ -15,7 +12,7 @@
  */
 
 html, body, section, article,
-h1, h2, p, strong, a {
+h1, h2, h3, p, strong, a {
   margin: 0;
   border: 0;
   padding: 0;
@@ -44,4 +41,14 @@ a {
 h1 {
   font-size: 36px;
   font-weight: 700;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: 400;
 }

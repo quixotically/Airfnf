@@ -1,5 +1,27 @@
 class Api::ListingsController < Api::ApiController
-  def new
-
+  def show
+    @listing = Listing.find(params[:id])
   end
+
+  def create
+    @listing = Listing.new(listing_params)
+
+    if @listing.save
+      render :show
+    else
+      render json: @listing.errors.full_messages, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    listing = Listing.find(params[:id])
+    listing.destroy
+    render json: {}
+  end
+
+  private
+
+    def listing_params
+      params.require(:listing).permit(:room_type, :price, :accommodates, :location)
+    end
 end

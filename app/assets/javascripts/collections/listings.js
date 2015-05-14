@@ -14,7 +14,7 @@ Airfnf.Collections.Listings = Backbone.Collection.extend({
         success: function () {
           that.add(listing);
         }
-      })
+      });
     }
 
     return listing;
