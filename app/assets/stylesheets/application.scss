@@ -11,7 +11,7 @@
  *= require_self
  */
 
-html, body, section, article,
+html, body, nav, section, article, ul, li,
 h1, h2, h3, p, strong, a {
   margin: 0;
   border: 0;
@@ -33,9 +33,13 @@ h1, h2, h3, p, strong, a {
   clear: both;
 }
 
-a {
-  text-decoration: underline;
-  color: blue;
+body {
+  font-family: sans-serif;
+  background: #33CCFF;
+}
+
+ul {
+  list-style-type: none;
 }
 
 h1 {
@@ -51,4 +55,50 @@ h2 {
 h3 {
   font-size: 28px;
   font-weight: 400;
+}
+
+// header
+
+.header {
+  //border: 1px solid black;
+}
+
+.header nav {
+  top: 20px;
+  left: 20px;
+}
+
+.header a {
+  text-align: center;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 10px 20px;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+}
+
+.header ul {
+  float: right;
+}
+
+.header ul > a {
+  float: left;
+}
+
+.header .create-listing {
+  display: block;
+  background: #0E948B;
+}
+
+.header .create-listing:hover {
+  background: #12C2B7;
+}
+
+// main content
+
+.main {
+  //width: 100%;
 }

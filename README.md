@@ -11,8 +11,8 @@ Users can:
 - [ ] Create accounts
 - [ ] Create sessions (log in)
 - [ ] Create listings
-- [ ] Approve bookings
 - [ ] Request to book listings
+- [ ] Approve bookings
 - [ ] Review guests
 - [ ] Review hosts
 
