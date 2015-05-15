@@ -100,5 +100,31 @@ h3 {
 // main content
 
 .main {
-  //width: 100%;
+}
+
+.main > div {
+  margin: 50px auto;
+}
+
+.listing-new {
+  text-align: center;
+}
+
+.listing-new > h1 {
+  margin: 20px;
+  color: #fff;
+}
+
+.listing-new > h3 {
+  margin: 20px;
+}
+
+.listing-new-form {
+  border-top: 1px solid #000;
+  margin: 40px;
+}
+
+.listing-new-form > ul {
+  display: block;
+  margin: 40px;
 }
