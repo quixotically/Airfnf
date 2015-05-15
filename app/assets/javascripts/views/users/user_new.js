@@ -13,13 +13,11 @@ Airfnf.Views.UserNew = Backbone.View.extend({
     event.preventDefault();
     var $form = $(event.currentTarget);
     var userData = $form.serializeJSON().user;
-    var that = this;
 
     this.model.set(userData);
     this.model.save({}, {
       success: function () {
         Airfnf.currentUser.fetch();
-        that.collection.add(that.model);
         Backbone.history.navigate("", { trigger: true });
       },
 

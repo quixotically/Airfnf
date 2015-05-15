@@ -1,0 +1,41 @@
+<h1>List Your Space</h1>
+<h3>Airfnf lets you meet new people by sharing you space and your food!</h3>
+
+<form>
+  <h3>Room Type</h3>
+    <label for="entire">Entire home/apt</label>
+    <input type="radio" name="listing[room_type]" value="Entire home/apt"
+      id="entire">
+
+    <label for="private">Private room</label>
+    <input type="radio" name="listing[room_type]" value="Private room"
+      id="private">
+
+    <label for="shared">Shared room</label>
+    <input type="radio" name="listing[room_type]" value="Shared room"
+      id="shared">
+
+  <h3>Accommodates</h3>
+    <select class="accommodates" name="listing[accommodates]">
+      <% for(var i = 1; i <= 16; i++) { %>
+        <option value="<%= i %>"><%= i %></option>
+      <% } %>
+    </select>
+
+  <label>
+    Location
+    <input type="text" name="listing[location]" value="">
+  </label>
+
+  <label>
+    Price $
+    <input type="text" name="listing[price]" value="">
+  </label>
+
+  <label>
+    Description
+    <textarea name="listing[description]" value=""></textarea>
+  </label>
+
+  <button>List</button>
+</form>

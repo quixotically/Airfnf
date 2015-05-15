@@ -1,13 +1,12 @@
 Airfnf.Routers.Router = Backbone.Router.extend({
   initialize: function () {
     this.$rootEl = $("#main");
-    this.listings = new Airfnf.Collections.Listings();
-    this.listings.fetch();
+    // this.listings = new Airfnf.Collections.Listings();
+    // this.listings.fetch();
   },
 
   routes: {
     '': 'home',
-    'listings': 'listingsIndex',
     'listings/new': 'listingNew',
     'listings/:id': 'listingShow',
     'users/new': 'userNew',
@@ -24,27 +23,33 @@ Airfnf.Routers.Router = Backbone.Router.extend({
 
   // listings routes
 
-  listingsIndex: function () {
-    var view = Airfnf.Views.ListingsIndex({
-      collection: this.listings
-    });
-
-    this._swapView(view);
-  },
+  // listingsIndex: function () {
+  //   var view = Airfnf.Views.ListingsIndex({
+  //     collection: this.listings
+  //   });
+  //
+  //   this._swapView(view);
+  // },
 
   listingNew: function () {
+    var callback = this.listingNew.bind(this);
+    if (!this._requireSignedIn(callback)) { return; }
+
     var listing = new Airfnf.Models.Listing();
 
     var view = new Airfnf.Views.ListingNew({
-      model: listing,
-      collection: this.listings
+      model: listing
     });
 
     this._swapView(view);
   },
 
   listingShow: function (id) {
-    var listing = this.listings.getAndFetch(id);
+    var callback = this.listingShow.bind(this, id);
+    if (!this._requireSignedIn(callback)) { return; }
+
+    var listing = new Airfnf.Models.Listing({ id: id });
+    listing.fetch();
 
     var view = new Airfnf.Views.ListingShow({
       model: listing
@@ -61,8 +66,7 @@ Airfnf.Routers.Router = Backbone.Router.extend({
     var user = new Airfnf.Models.User();
 
     var view = new Airfnf.Views.UserNew({
-      model: user,
-      collection: this.users
+      model: user
     });
 
     this._swapView(view);

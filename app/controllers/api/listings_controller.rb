@@ -4,7 +4,7 @@ class Api::ListingsController < Api::ApiController
   end
 
   def create
-    @listing = Listing.new(listing_params)
+    @listing = current_user.listings.new(listing_params)
 
     if @listing.save
       render :show
@@ -22,6 +22,6 @@ class Api::ListingsController < Api::ApiController
   private
 
     def listing_params
-      params.require(:listing).permit(:room_type, :price, :accommodates, :location)
+      params.require(:listing).permit(:room_type, :price, :accommodates, :location, :description)
     end
 end
