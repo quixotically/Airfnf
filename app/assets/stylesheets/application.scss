@@ -12,7 +12,7 @@
  */
 
 html, body, nav, section, article, ul, li,
-h1, h2, h3, p, strong, a {
+main, img, h1, h2, h3, p, strong, a {
   margin: 0;
   border: 0;
   padding: 0;
@@ -39,7 +39,7 @@ body {
 }
 
 ul {
-  list-style-type: none;
+  list-style: none;
 }
 
 h1 {
@@ -59,25 +59,19 @@ h3 {
 
 // header
 
-.header {
-  //border: 1px solid black;
+.header img {
+  width: 80px;
+  height: auto;
+  display: block;
 }
 
-.header nav {
-  top: 20px;
-  left: 20px;
+.header {
+  padding: 20px 20px;
 }
 
 .header a {
-  text-align: center;
   color: #fff;
-  padding: 10px 20px;
-  margin: 10px 20px;
-}
 
-.header .logo {
-  display: block;
-  float: left;
 }
 
 .header ul {
@@ -86,11 +80,14 @@ h3 {
 
 .header ul > a {
   float: left;
+  margin: 10px 10px;
 }
 
 .header .create-listing {
   display: block;
   background: #0E948B;
+  padding: 10px 20px;
+  margin: 0 0 0 10px;
 }
 
 .header .create-listing:hover {

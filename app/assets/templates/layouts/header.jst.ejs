@@ -1,13 +1,11 @@
-<nav class="group">
-  <a class="logo" href="#">Airfnf (logo)</a>
-  <ul class="group">
-    <% if (Airfnf.currentUser.isSignedIn()) { %>
-      <a href="#/users/<%= Airfnf.currentUser.id %>">Signed in as: <%= Airfnf.currentUser.escape("username") %></a>
-      <a href="#" id="sign-out-link">Sign Out</a>
-    <% } else { %>
-      <a href="#/users/new">Sign Up</a>
-      <a href="#/session/new">Sign In</a>
-    <% } %>
-    <a class="create-listing" href="#/listings/new">List Your Space</a>
-  </ul>
-</nav>
+<a class="logo" href="#"><%= $("#logo").html() %></a>
+<ul class="group">
+  <% if (Airfnf.currentUser.isSignedIn()) { %>
+    <a href="#/users/<%= Airfnf.currentUser.id %>">Signed in as: <%= Airfnf.currentUser.escape("username") %></a>
+    <a href="#" id="sign-out-link">Sign Out</a>
+  <% } else { %>
+    <a href="#/users/new">Sign Up</a>
+    <a href="#/session/new">Sign In</a>
+  <% } %>
+  <a class="create-listing" href="#/listings/new">List Your Space</a>
+</ul>
