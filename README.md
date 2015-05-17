@@ -8,9 +8,9 @@
 Airfnf is a clone of Airbnb built on Rails and Backbone.
 
 Users can:
-- [ ] Create accounts
-- [ ] Create sessions (log in)
-- [ ] Create listings
+- [x] Create accounts
+- [x] Create sessions (log in)
+- [x] Create listings
 - [ ] Request to book listings
 - [ ] Approve bookings
 - [ ] Review guests
@@ -60,7 +60,8 @@ I'll start by creating a Rails Review model. Then, I'll create Backbone Review m
 
 ### Bonus Features (TBD)
 - [ ] Repopulate local listings upon scrolling the map
-- [ ] Logo
+- [x] Logo
+- [ ] Modal view for user sign in and sign up
 - [ ] Require sign-in only for certain actions
 - [ ] Save listing to a wish list
 - [ ] View wish lists on user profiles
