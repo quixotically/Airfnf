@@ -17,8 +17,6 @@ Airfnf.Routers.UsersRouter = Backbone.Router.extend({
     this._swapView(new Airfnf.Views.Home());
   },
 
-  // user and session routes
-
   userNew: function () {
     if (!this._requireSignedOut()) { return; }
 

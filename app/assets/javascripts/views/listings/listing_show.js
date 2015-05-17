@@ -1,4 +1,5 @@
 Airfnf.Views.ListingShow = Backbone.CompositeView.extend({
+  tagName: 'ul',
   template: JST["listings/show"],
 
   initialize: function () {

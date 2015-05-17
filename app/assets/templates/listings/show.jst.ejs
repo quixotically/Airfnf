@@ -1,12 +1,14 @@
-<h1><%= listing.escape("location") %></h1>
+<li class="listing">
+  <h3><%= listing.escape("location") %></h3>
 
-<p>
-  Description:
-  <%= listing.escape("description") %>
-</p>
+  <p>
+    Description:
+    <%= listing.escape("description") %>
+  </p>
 
-<ul>
-  <li>Room type: <%= listing.escape("room_type") %></li>
-  <li>Accommodates: <%= listing.escape("accommodates") %></li>
-  <li>Price: $<%= listing.escape("price") %></li>
-</ul>
+  <ul>
+    <li>Room type: <%= listing.escape("room_type") %></li>
+    <li>Accommodates: <%= listing.escape("accommodates") %></li>
+    <li>Price: $<%= listing.escape("price") %></li>
+  </ul>
+</li>

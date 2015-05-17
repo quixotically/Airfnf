@@ -1,11 +1,10 @@
 Airfnf.Routers.ListingsRouter = Backbone.Router.extend({
   initialize: function () {
     this.$rootEl = $("#main");
-    // this.listings = new Airfnf.Collections.Listings();
-    // this.listings.fetch();
   },
 
   routes: {
+    'listings': 'listingsIndex',
     'listings/new': 'listingNew',
     'listings/:id': 'listingShow'
   },

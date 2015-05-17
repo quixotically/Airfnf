@@ -1,9 +1,26 @@
 Airfnf.Models.User = Backbone.Model.extend({
   urlRoot: "/api/users",
 
+  listings: function () {
+    if (!this._listings) {
+      this._listings = new Airfnf.Collections.Listings([], { user: this });
+    }
+
+    return this._listings;
+  },
+
   toJSON: function () {
     var json = { user: _.clone(this.attributes) };
     return json;
+  },
+
+  parse: function (resp) {
+    if (resp.listings) {
+      this.listings().set(resp.listings, { parse: true });
+      delete resp.listings;
+    }
+
+    return resp;
   }
 });
 
