@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150514194933) do
+ActiveRecord::Schema.define(version: 20150518155912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,20 @@ ActiveRecord::Schema.define(version: 20150514194933) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
+  create_table "requests", force: :cascade do |t|
+    t.integer  "listing_id",                       null: false
+    t.integer  "requestor_id",                     null: false
+    t.date     "start_date",                       null: false
+    t.date     "end_date",                         null: false
+    t.string   "status",       default: "Pending", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "requests", ["listing_id", "requestor_id"], name: "index_requests_on_listing_id_and_requestor_id", unique: true, using: :btree
+  add_index "requests", ["listing_id"], name: "index_requests_on_listing_id", using: :btree
+  add_index "requests", ["requestor_id"], name: "index_requests_on_requestor_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
