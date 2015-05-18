@@ -11,6 +11,7 @@ window.Airfnf = {
     this.header = new Airfnf.Views.Header({ el: "#header" });
     new Airfnf.Routers.UsersRouter();
     new Airfnf.Routers.ListingsRouter();
+    new Airfnf.Routers.RequestsRouter();
 
     Backbone.history.start();
   }
