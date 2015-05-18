@@ -1,6 +1,7 @@
 class Listing < ActiveRecord::Base
   validates :owner_id, :room_type, :price, :accommodates, :location, presence: true
   validates :price, numericality: { only_integer: true }
-  #has_many :requests
+  
+  has_many :requests
   belongs_to :owner, class_name: "User"
 end

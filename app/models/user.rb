@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
 
   has_many :listings, foreign_key: :owner_id
+  has_many :requests, foreign_key: :requestor_id
 
   after_initialize :ensure_session_token
 
