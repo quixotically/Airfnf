@@ -1,4 +1,9 @@
 class Api::ListingsController < Api::ApiController
+  # def index
+  #   # :user_id is undefined
+  #   @listings = User.find(params[:user_id]).listings
+  # end
+
   def show
     @listing = Listing.find(params[:id])
   end

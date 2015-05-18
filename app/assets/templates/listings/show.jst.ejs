@@ -11,4 +11,7 @@
     <li>Accommodates: <%= listing.escape("accommodates") %></li>
     <li>Price: $<%= listing.escape("price") %></li>
   </ul>
+  <% if (Airfnf.currentUser.id === listing.owner_id) { %>
+    <button class="delete" data-id="<%= listing.id %>">Remove Listing</button>
+  <% } %>
 </li>

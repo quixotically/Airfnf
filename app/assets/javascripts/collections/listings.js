@@ -1,11 +1,12 @@
 Airfnf.Collections.Listings = Backbone.Collection.extend({
-  url: '/api/listings',
+  // fix this url
+  url: "/api/users/:user_id/listings",
   model: Airfnf.Models.Listing,
 
   initialize: function (models, options) {
     this.user = options.user;
   },
-
+  // needed?
   getAndFetch: function (id) {
     var listing = this.get(id);
     var that = this;

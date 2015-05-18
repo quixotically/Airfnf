@@ -8,14 +8,14 @@ Airfnf.Routers.ListingsRouter = Backbone.Router.extend({
     'listings/new': 'listingNew',
     'listings/:id': 'listingShow'
   },
-
-  listingsIndex: function () {
-    var view = Airfnf.Views.ListingsIndex({
-      collection: this.listings
-    });
-
-    this._swapView(view);
-  },
+  // 
+  // listingsIndex: function () {
+  //   var view = Airfnf.Views.ListingsIndex({
+  //     collection: this.listings
+  //   });
+  //
+  //   this._swapView(view);
+  // },
 
   listingNew: function () {
     var callback = this.listingNew.bind(this);
