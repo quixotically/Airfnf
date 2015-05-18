@@ -4,7 +4,7 @@ Airfnf.Collections.Requests = Backbone.Collection.extend({
   model: Airfnf.Models.Request,
   // correct initialization???
   initialize: function (models, options) {
-    this.user = options.user;
+    //this.user = options.user;
     this.listing = options.listing;
   },
 

@@ -3,11 +3,23 @@ Airfnf.Models.User = Backbone.Model.extend({
 
   listings: function () {
     if (!this._listings) {
-      this._listings = new Airfnf.Collections.Listings([], { user: this });
+      this._listings = new Airfnf.Collections.Listings([], {
+        user: this
+      });
     }
 
     return this._listings;
   },
+  //
+  // requests: function () {
+  //   if (!this._requests) {
+  //     this._requests = new Airfnf.Collections.Requests([], {
+  //       user: this
+  //     });
+  //   }
+  //
+  //   return this._requests;
+  // },
 
   toJSON: function () {
     var json = { user: _.clone(this.attributes) };
@@ -19,6 +31,11 @@ Airfnf.Models.User = Backbone.Model.extend({
       this.listings().set(resp.listings, { parse: true });
       delete resp.listings;
     }
+
+    // if (resp.requests) {
+    //   this.requests().set(resp.requests, { parse: true });
+    //   delete resp.requests;
+    // }
 
     return resp;
   }
