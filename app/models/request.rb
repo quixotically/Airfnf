@@ -19,6 +19,11 @@ class Request < ActiveRecord::Base
     end
   end
 
+  def deny!
+    self.status = "Denied"
+    self.save!
+  end
+
   def approved?
     self.status == "Approved"
   end
@@ -29,11 +34,6 @@ class Request < ActiveRecord::Base
 
   def pending?
     self.status == "Pending"
-  end
-
-  def deny!
-    self.status = "Denied"
-    self.save!
   end
 
   def all_other_requests
