@@ -19,7 +19,7 @@ Airfnf.Models.User = Backbone.Model.extend({
       this.listings().set(resp.listings, { parse: true });
       delete resp.listings;
     }
-    
+
     return resp;
   }
 });
@@ -28,7 +28,7 @@ Airfnf.Models.CurrentUser = Airfnf.Models.User.extend({
   url: "/api/session",
 
   initialize: function (options) {
-    this.listenTo(this, "change", this.fireSessionEvent);
+    // this.listenTo(this, "change", this.fireSessionEvent);
   },
 
   isSignedIn: function() {
@@ -69,15 +69,5 @@ Airfnf.Models.CurrentUser = Airfnf.Models.User.extend({
         options.success && options.success();
       }
     });
-  },
-
-  fireSessionEvent: function () {
-    if(this.isSignedIn()){
-      this.trigger("signIn");
-      console.log("currentUser is signed in!", this);
-    } else {
-      this.trigger("signOut");
-      console.log("currentUser is signed out!", this);
-    }
   }
 });

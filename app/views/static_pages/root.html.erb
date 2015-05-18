@@ -2,9 +2,8 @@
 <main id="main" class="main"></main>
 
 <script>
-  $(Airfnf.initialize.bind(Airfnf));
-</script>
-
-<script type="text/template" id="logo">
-  <img src="<%= asset_path("airfnf-logo.png") %>"/>
+  $(document).ready(function () {
+    <%= current_user_id = current_user.id if current_user %>
+    Airfnf.initialize(<%= current_user_id %>);
+  });
 </script>

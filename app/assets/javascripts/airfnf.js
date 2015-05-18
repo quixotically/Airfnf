@@ -3,8 +3,9 @@ window.Airfnf = {
   Collections: {},
   Views: {},
   Routers: {},
-  initialize: function () {
-    this.currentUser = new Airfnf.Models.CurrentUser();
+  initialize: function (current_user_id) {
+    this.currentUser = new Airfnf.Models.CurrentUser({ id:
+      current_user_id });
     this.currentUser.fetch();
 
     this.header = new Airfnf.Views.Header({ el: "#header" });

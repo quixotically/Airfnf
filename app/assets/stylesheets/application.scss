@@ -66,9 +66,16 @@ h3 {
 // header
 
 .header .logo {
+  display: block;
+  // #px from inspecting height of .create-listing
+  padding-top: 38px;
+  height: 0;
+  overflow: hidden;
+  background: image-url("airfnf-logo.png");
+  background-size: 100px;
+
   width: 100px;
   float: left;
-  display: block;
 }
 
 .header {

@@ -1,4 +1,4 @@
-<a class="logo" href="#"><%= $("#logo").html() %></a>
+<a class="logo" href="#">Airfnf</a>
 <ul class="group">
   <% if (Airfnf.currentUser.isSignedIn()) { %>
     <a href="#/users/<%= Airfnf.currentUser.id %>">Signed in as: <%= Airfnf.currentUser.escape("username") %></a>
