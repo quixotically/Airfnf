@@ -28,7 +28,7 @@ Airfnf.Models.CurrentUser = Airfnf.Models.User.extend({
   url: "/api/session",
 
   initialize: function (options) {
-    // this.listenTo(this, "change", this.fireSessionEvent);
+    this.listenTo(this, "change", this.fireSessionEvent);
   },
 
   isSignedIn: function() {
@@ -69,5 +69,13 @@ Airfnf.Models.CurrentUser = Airfnf.Models.User.extend({
         options.success && options.success();
       }
     });
+  },
+
+  fireSessionEvent: function () {
+    if(this.isSignedIn()){
+      this.trigger("signIn");
+    } else {
+      this.trigger("signOut");
+    }
   }
 });
