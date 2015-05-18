@@ -1,6 +1,6 @@
 Airfnf.Collections.Listings = Backbone.Collection.extend({
-  // fix this url
-  url: "/api/users/:user_id/listings",
+  // nested url?
+  url: "/api/listings",
   model: Airfnf.Models.Listing,
 
   initialize: function (models, options) {

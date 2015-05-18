@@ -19,7 +19,7 @@ Airfnf.Models.User = Backbone.Model.extend({
       this.listings().set(resp.listings, { parse: true });
       delete resp.listings;
     }
-
+    
     return resp;
   }
 });
