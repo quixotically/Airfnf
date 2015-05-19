@@ -40,7 +40,6 @@ Airfnf.Views.UserShow = Backbone.CompositeView.extend({
     var view = new Airfnf.Views.RequestShow({
       model: request,
       // requests: users's requests
-      // need: listing and owner
       collection: this.requests
     });
 

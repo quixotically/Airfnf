@@ -15,7 +15,7 @@ Airfnf.Models.User = Backbone.Model.extend({
     if (!this._requests) {
       this._requests = new Airfnf.Collections.Requests([], {
         // requestor: this
-        requestor_or_listing: this
+        //requestor_or_listing: this
       });
     }
 

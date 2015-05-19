@@ -4,7 +4,8 @@ Airfnf.Collections.Requests = Backbone.Collection.extend({
   model: Airfnf.Models.Request,
 
   initialize: function (models, options) {
-    this.requestor_or_listing = options.requestor_or_listing;
+  //  this.requestor = options.requestor;
+  //  this.listing = options.listing;
   },
 
   getAndFetch: function (id) {

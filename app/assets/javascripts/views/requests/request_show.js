@@ -7,10 +7,10 @@ Airfnf.Views.RequestShow = Backbone.View.extend({
 
   initialize: function () {
     this.listenTo(this.model, "sync change", this.render);
-    this.listenTo(this.model.owner(), "sync change", this.render);
-    this.listenTo(this.model.listing(), "sync change", this.render);
+    //this.listenTo(this.model.owner(), "sync change", this.render);
+    //this.listenTo(this.model.listing(), "sync change", this.render);
     this.listenTo(this.collection, "sync", this.render);
-    this.listenTo(this.collection.requestor_or_listing, "sync", this.render);
+    //this.listenTo(this.collection.requestor_or_listing, "sync", this.render);
   },
 
   approve: function (event) {
@@ -22,15 +22,13 @@ Airfnf.Views.RequestShow = Backbone.View.extend({
       method: "POST",
       dataType: "json",
       success: function () {
-        // is a listing, so we can book it
-        this.collection.requestor_or_listing.book(this.model, this.collection);
+        this.model.listing().book(this.model, this.collection);
         this.render();
       }.bind(this)
     });
   },
 
   render: function () {
-    //debugger;
     var content = this.template({
       request: this.model,
       owner: this.model.owner(),

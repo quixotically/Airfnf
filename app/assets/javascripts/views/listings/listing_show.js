@@ -12,7 +12,6 @@ Airfnf.Views.ListingShow = Backbone.CompositeView.extend({
 
   events: {
     'click .request-to-book': 'addRequestFormView'
-    // 'submit form': 'book'
   },
 
   addListingRequestView: function (request) {
@@ -34,25 +33,9 @@ Airfnf.Views.ListingShow = Backbone.CompositeView.extend({
     this.requestNewView = new Airfnf.Views.RequestNew({
       model: request
     });
-    // var that = this;  ???
+
     this.addSubview('.request-new', this.requestNewView);
   },
-
-  // book: function (event) {
-  //   event.preventDefault();
-  //   var attrs = $(event.currentTarget).serializeJSON().request;
-  //   var that = this;
-  //
-  //   this.model.set(attrs);
-  //   this.model.set({ listing_id: this.model.id });
-  //   this.model.save({}, {
-  //     success: function () {
-  //       this.removeSubview('.request-new', this.requestNewView);
-  //       $('.request-to-book').prop('disabled', true);
-  //       $('.request-to-book').html("Requested");
-  //     }.bind(this)
-  //   });
-  // },
 
   render: function () {
     var content = this.template({ listing: this.model });
