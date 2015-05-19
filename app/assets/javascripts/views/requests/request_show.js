@@ -6,9 +6,10 @@ Airfnf.Views.RequestShow = Backbone.View.extend({
   },
 
   initialize: function () {
-    this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.model, "sync change", this.render);
     this.listenTo(this.model.owner(), "sync change", this.render);
     this.listenTo(this.model.listing(), "sync change", this.render);
+    this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection.requestor_or_listing, "sync", this.render);
   },
 
@@ -22,7 +23,7 @@ Airfnf.Views.RequestShow = Backbone.View.extend({
       dataType: "json",
       success: function () {
         // is a listing, so we can book it
-        this.collection.requestor_or_listing.book();
+        this.collection.requestor_or_listing.book(this.model, this.collection);
         this.render();
       }.bind(this)
     });

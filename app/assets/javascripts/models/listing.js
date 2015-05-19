@@ -1,7 +1,13 @@
 Airfnf.Models.Listing = Backbone.Model.extend({
   urlRoot: '/api/listings',
 
-  book: function () {
+  book: function (approved_request, denied_requests) {
+    denied_requests.each(function (request) {
+      request.set("status", "Denied");
+    });
+    // set after since is a part of the collection, could rewrite as if/else
+    approved_request.set("status", "Approved");
+
     this._booked = true;
   },
 
