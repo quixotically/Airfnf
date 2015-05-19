@@ -7,13 +7,14 @@ Airfnf.Views.RequestNew = Backbone.View.extend({
 
   submit: function (event) {
     event.preventDefault();
-    var formData = $(event.currentTarget).serializeJSON().request;
+    var attrs = $(event.currentTarget).serializeJSON().request;
     var that = this;
 
-    this.model.set(formData);
+    this.model.set(attrs);
     this.model.save({}, {
       success: function () {
-        Backbone.history.navigate("/requests/" + that.model.id, { trigger: true })
+        Backbone.history.navigate("/requests/" + that.model.id,
+          { trigger: true });
       },
 
       error: function () {
