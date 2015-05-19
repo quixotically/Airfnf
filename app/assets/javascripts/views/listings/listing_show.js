@@ -18,6 +18,8 @@ Airfnf.Views.ListingShow = Backbone.CompositeView.extend({
   addListingRequestView: function (request) {
     var requestView = new Airfnf.Views.RequestShow({
       model: request,
+      // collection: requests for listing
+      //need: listing and owner
       collection: this.collection
     });
 

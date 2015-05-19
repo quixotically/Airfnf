@@ -4,8 +4,7 @@ Airfnf.Routers.RequestsRouter = Backbone.Router.extend({
   },
 
   routes: {
-    'requests/new': 'requestNew',
-    'requests/:id': 'requestShow'
+    'requests/new': 'requestNew'
   },
 
   requestNew: function () {
@@ -19,19 +18,20 @@ Airfnf.Routers.RequestsRouter = Backbone.Router.extend({
     });
 
     this._swapView(view);
-  },
-
-  requestShow: function (id) {
-    var callback = this.requestShow.bind(this, id);
-    if (!this._requireSignedIn(callback)) { return; }
-
-    var request = new Airfnf.Models.Request({ id: id });
-    request.fetch();
-
-    var view = new Airfnf.Views.RequestShow({
-      model: request
-    });
-
-    this._swapView(view);
   }
+
+  // requestShow: function (id) {
+  //   var callback = this.requestShow.bind(this, id);
+  //   if (!this._requireSignedIn(callback)) { return; }
+  //
+  //   var request = new Airfnf.Models.Request({ id: id });
+  //   request.fetch();
+  //
+  //   var view = new Airfnf.Views.RequestShow({
+  //     model: request,
+  //     collection: ????
+  //   });
+  //
+  //   this._swapView(view);
+  // }
 });

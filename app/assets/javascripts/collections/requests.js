@@ -2,12 +2,9 @@ Airfnf.Collections.Requests = Backbone.Collection.extend({
   url: "/api/requests",
 
   model: Airfnf.Models.Request,
-  // correct initialization???
+
   initialize: function (models, options) {
-    //this.user = options.user;
-    // this.owner = 
-    // this.listing = options.listing;
-    this.owner_or_listing = options.owner_or_listing;
+    this.requestor_or_listing = options.requestor_or_listing;
   },
 
   getAndFetch: function (id) {

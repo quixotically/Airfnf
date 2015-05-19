@@ -13,7 +13,7 @@ Airfnf.Views.RequestNew = Backbone.View.extend({
     this.model.set(attrs);
     this.model.save({}, {
       success: function () {
-        Backbone.history.navigate("/requests/" + that.model.id,
+        Backbone.history.navigate("/users/" + that.model.escape("requestor_id"),
           { trigger: true });
       },
 

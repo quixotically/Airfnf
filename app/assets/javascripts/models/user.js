@@ -4,7 +4,7 @@ Airfnf.Models.User = Backbone.Model.extend({
   listings: function () {
     if (!this._listings) {
       this._listings = new Airfnf.Collections.Listings([], {
-        user: this
+        owner: this
       });
     }
 
@@ -14,8 +14,8 @@ Airfnf.Models.User = Backbone.Model.extend({
   requests: function () {
     if (!this._requests) {
       this._requests = new Airfnf.Collections.Requests([], {
-        // user: this
-        owner_or_listing: this
+        // requestor: this
+        requestor_or_listing: this
       });
     }
 

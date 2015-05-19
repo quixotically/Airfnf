@@ -6,7 +6,10 @@ Airfnf.Views.RequestShow = Backbone.View.extend({
   },
 
   initialize: function () {
-    this.listenTo(this.collection.owner_or_listing, "sync", this.render);
+    this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.model.owner(), "sync change", this.render);
+    this.listenTo(this.model.listing(), "sync change", this.render);
+    this.listenTo(this.collection.requestor_or_listing, "sync", this.render);
   },
 
   approve: function (event) {
@@ -19,16 +22,18 @@ Airfnf.Views.RequestShow = Backbone.View.extend({
       dataType: "json",
       success: function () {
         // is a listing, so we can book it
-        this.collection.owner_or_listing.book();
+        this.collection.requestor_or_listing.book();
         this.render();
       }.bind(this)
     });
   },
 
   render: function () {
+    //debugger;
     var content = this.template({
       request: this.model,
-      listing: this.collection.owner_or_listing
+      owner: this.model.owner(),
+      listing: this.model.listing()
     });
     this.$el.html(content);
     return this;
