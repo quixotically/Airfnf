@@ -1,6 +1,6 @@
 class Api::RequestsController < Api::ApiController
   def approve
-    current_reqeust.approve!
+    current_request.approve!
   end
 
   def deny
