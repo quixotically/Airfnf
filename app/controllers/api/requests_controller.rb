@@ -1,6 +1,9 @@
 class Api::RequestsController < Api::ApiController
+  # before_action :require_ownership!, only: [:approve, :deny]
+
   def approve
     current_request.approve!
+    render json: {}
   end
 
   def deny
@@ -27,9 +30,14 @@ class Api::RequestsController < Api::ApiController
       @request ||= Request.includes(:listing).find(params[:id])
     end
 
-    def current_listing
-      current_request.listing
-    end
+    # def current_listing
+    #   current_request.listing
+    # end
+    #
+    # def require_ownership!
+    #   return if current_user.owns_listing?(current_listing)
+    #   render json: { message: "You do not own this listing!" }
+    # end
 
     def request_params
       params.require(:request).permit(:listing_id, :start_date, :end_date)

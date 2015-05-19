@@ -15,6 +15,10 @@ class User < ActiveRecord::Base
     return nil if user.nil?
     user.is_password?(password) ? user : nil
   end
+  # 
+  # def owns_listing?(listing)
+  #   listing.owner_id == self.id
+  # end
 
   def is_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)

@@ -6,27 +6,30 @@ Airfnf.Views.RequestShow = Backbone.View.extend({
   },
 
   initialize: function () {
-    this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.collection.owner_or_listing, "sync", this.render);
   },
 
   approve: function (event) {
     event.preventDefault();
-    var requestId = $(event.currentTarget).attr("data-id");
-    var url = "/api/requests/" + requestId + "/approve";
+    var url = "/api/requests/" + this.model.id + "/approve";
 
     $.ajax({
       url: url,
       method: "POST",
       dataType: "json",
       success: function () {
-        // fetch collection/model data?
-        // this.render();
+        // is a listing, so we can book it
+        this.collection.owner_or_listing.book();
+        this.render();
       }.bind(this)
     });
   },
 
   render: function () {
-    var content = this.template({ request: this.model });
+    var content = this.template({
+      request: this.model,
+      listing: this.collection.owner_or_listing
+    });
     this.$el.html(content);
     return this;
   }

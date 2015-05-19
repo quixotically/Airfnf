@@ -13,7 +13,7 @@ Airfnf.Models.User = Backbone.Model.extend({
 
   requests: function () {
     if (!this._requests) {
-      this._requests = new Airfnf.Collections.Requests([],
+      this._requests = new Airfnf.Collections.Requests([], {
         // user: this
         owner_or_listing: this
       });

@@ -2,10 +2,10 @@ Airfnf.Views.RequestNew = Backbone.View.extend({
   template: JST["requests/new"],
 
   events: {
-    'submit form': 'submit'
+    'submit form': 'book'
   },
 
-  submit: function (event) {
+  book: function (event) {
     event.preventDefault();
     var attrs = $(event.currentTarget).serializeJSON().request;
     var that = this;
