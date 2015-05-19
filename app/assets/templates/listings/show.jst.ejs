@@ -13,10 +13,10 @@
     <li>Accommodates: <%= listing.escape("accommodates") %></li>
     <li>Price: $<%= listing.escape("price") %></li>
   </ul>
-  
+
   <% if (is_owner) { %>
     <button class="delete" data-id="<%= listing.escape("id") %>">Remove Listing</button>
-  <% } else if (!is_owner) { %>
+  <% } else { %>
     <button class="request-to-book">Request to Book</button>
     <section class="request-new"></section>
   <% } %>

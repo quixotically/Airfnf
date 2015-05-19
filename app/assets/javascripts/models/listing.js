@@ -4,7 +4,7 @@ Airfnf.Models.Listing = Backbone.Model.extend({
   requests: function () {
     if (!this._requests) {
       this._requests = new Airfnf.Collections.Requests([], {
-        listing: this
+        owner_or_listing: this
       });
     }
 

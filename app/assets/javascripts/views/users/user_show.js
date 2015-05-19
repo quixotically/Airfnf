@@ -2,13 +2,16 @@ Airfnf.Views.UserShow = Backbone.CompositeView.extend({
   template: JST["users/show"],
 
   initialize: function () {
-    this.collection = this.model.listings();
-    // this.collection.fetch();
     this.listenTo(this.model, "sync change", this.render);
-    //this.listenTo(this.collection, "sync", this.render);
+
+    this.collection = this.model.listings();
     this.listenTo(this.collection, "add", this.addListingView);
     this.listenTo(this.collection, "remove", this.removeListingView);
     this.collection.each(this.addListingView.bind(this));
+
+    this.requests = this.model.requests();
+    this.listenTo(this.requests, "add", this.addRequestView);
+    this.requests.each(this.addRequestView.bind(this));
   },
 
   events: {
@@ -31,6 +34,14 @@ Airfnf.Views.UserShow = Backbone.CompositeView.extend({
 
   removeListingView: function (listing) {
     this.removeModelSubview('.listings', listing);
+  },
+
+  addRequestView: function (request) {
+    var view = new Airfnf.Views.RequestShow({
+      model: request
+    });
+
+    this.addSubview('.requests', view);
   },
 
   render: function () {

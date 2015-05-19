@@ -4,33 +4,37 @@ Airfnf.Views.ListingShow = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
-    //this.listenTo(this.subviews, "change", this.removeRequestView)
   },
 
   events: {
     'click .request-to-book': 'addRequestFormView'
-    //'submit form': 'book'
+    'submit form': 'book'
   },
 
   addRequestFormView: function (event) {
     event.preventDefault();
-    this.requestNewView = new Airfnf.Views.RequestNew();
+    this.requestNewView = new Airfnf.Views.RequestNew({
+      listing_id: this.model.id
+    });
     // var that = this;  ???
     this.addSubview('.request-new', this.requestNewView);
   },
-  //
-  // book: function (event) {
-  //   event.preventDefault();
-  //   var attrs = $(event.currentTarget).serializeJSON().request;
-  //   var that = this;
-  //
-  //   this.model.set(attrs);
-  //   this.model.save({}, {
-  //     success: function () {
-  //       this.removeSubview('.request-new', this.requestNewView);
-  //     }.bind(this)
-  //   });
-  // },
+
+  book: function (event) {
+    event.preventDefault();
+    var attrs = $(event.currentTarget).serializeJSON().request;
+    var that = this;
+
+    this.model.set(attrs);
+    this.model.set({ listing_id: $(event.currentTarget).attr("data-listing-id") });
+    this.model.save({}, {
+      success: function () {
+        this.removeSubview('.request-new', this.requestNewView);
+        $('.request-to-book').prop('disabled', true);
+        $('.request-to-book').html("Requested");
+      }.bind(this)
+    });
+  },
 
   render: function () {
     var content = this.template({ listing: this.model });
