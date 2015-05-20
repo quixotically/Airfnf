@@ -18,6 +18,7 @@ Airfnf.Views.SearchResults = Backbone.CompositeView.extend({
   filterPrice: function (event) {
     event.preventDefault();
     this.collection = Airfnf.currentSearch.where({ price: $(event.currentTarget).val()});
+    var values = $(".price-slider").slider("values");
   },
 
   filterRoomType: function (event) {

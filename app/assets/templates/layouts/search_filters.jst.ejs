@@ -15,18 +15,18 @@
 <li>
   <p>
     <label for="amount">Price range: </label>
-    <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+    <input type="text" class="amount" id="amount" readonly>
   </p>
   <div class="price-slider"></div>
   <script>
     $(function() {
-      $( ".price-slider" ).slider({ range: true, min: 10, max: 1000,
-        values: [ 10, 1000 ],
+      $( ".price-slider" ).slider({
+        range: true, min: 10, max: 1000, values: [ 10, 1000 ],
         slide: function( event, ui ) {
-          $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+          $( ".amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
         }
       });
-      $( "#amount" ).val( "$" + $( ".price-slider" ).slider( "values", 0 ) +
+      $( ".amount" ).val( "$" + $( ".price-slider" ).slider( "values", 0 ) +
         " - $" + $( ".price-slider" ).slider( "values", 1 ) );
     });
   </script>

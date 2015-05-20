@@ -136,3 +136,27 @@ h3 {
   display: block;
   margin: 40px;
 }
+
+// slider
+
+p > .amount {
+  border: 0;
+  color: #ff8400;
+  width: 100px;
+  font-size: 14px;
+  font-weight: bold;
+  background: transparent;
+}
+
+.price-slider {
+  margin: 0 auto;
+  width: 500px;
+}
+
+.price-slider .ui-slider-range {
+  background: #ff0055;
+}
+
+.price-slider .ui-slider-handle {
+  border-radius: 50%;
+}
