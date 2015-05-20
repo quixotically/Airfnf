@@ -12,7 +12,7 @@
  */
 
 html, body, nav, section, article, ul, li,
-main, img, h1, h2, h3, p, strong, a {
+main, img, h1, h2, h3, p, strong, a, div, span {
   margin: 0;
   border: 0;
   padding: 0;
@@ -149,7 +149,8 @@ p > .amount {
 }
 
 .price-slider {
-  margin: 0 auto;
+  margin: auto auto;
+  height: 4px;
   width: 500px;
 }
 
@@ -159,4 +160,5 @@ p > .amount {
 
 .price-slider .ui-slider-handle {
   border-radius: 50%;
+  top: -9px;
 }

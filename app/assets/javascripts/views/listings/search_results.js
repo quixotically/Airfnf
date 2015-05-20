@@ -2,7 +2,7 @@ Airfnf.Views.SearchResults = Backbone.CompositeView.extend({
   template: JST["listings/search_results"],
 
   events: {
-    'change .price': 'filterPrice',
+    'change .price-slider': 'filterPrice',
     'change .room-type': 'filterRoomType',
     'change .guests': 'filterGuests'
   },
@@ -17,8 +17,9 @@ Airfnf.Views.SearchResults = Backbone.CompositeView.extend({
 
   filterPrice: function (event) {
     event.preventDefault();
-    this.collection = Airfnf.currentSearch.where({ price: $(event.currentTarget).val()});
-    var values = $(".price-slider").slider("values");
+    console.log("HELLO!");
+    // this.collection = Airfnf.currentSearch.where({ price: $(event.currentTarget).val()});
+    // var values = $(".price-slider").slider("values");
   },
 
   filterRoomType: function (event) {
