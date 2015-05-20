@@ -1,8 +1,7 @@
 class Api::ListingsController < Api::ApiController
-  # def index
-  #   # :user_id is undefined
-  #   @listings = User.find(params[:user_id]).listings
-  # end
+  def search
+    @search_results = Listing.where("location = ?", params[:search])
+  end
 
   def show
     @listing = Listing.find(params[:id])
