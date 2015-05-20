@@ -1,6 +1,6 @@
 <li>
   <h3>Accommodates</h3>
-  <select class="accommodates" name="search[accommodates]">
+  <select class="accommodates" name="accommodates">
     <% for(var i = 1; i <= 16; i++) { %>
       <option value="<%= i %>"><%= i %></option>
     <% } %>
@@ -8,13 +8,26 @@
 </li>
 <li>
   <h3>Room Type</h3>
-    <select class="room-type" name="search[room_type]">
-      <option value="Entire home/apt">Entire place</option>
-      <option value="Private room">Private room</option>
-      <option value="Shared room">Shared room</option>
-    </select>
+    <input type="checkbox" name="room_type" value="Entire home/apt">Entire place
+    <input type="checkbox" name="room_type" value="Private room">Private room
+    <input type="checkbox" name="room_type" value="Shared room">Shared room
 </li>
 <li>
-  <h3>Price Range</h3>
-  <input type="range" name="search[range]" min="10" max="1000">
+  <p>
+    <label for="amount">Price range: </label>
+    <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+  </p>
+  <div class="price-slider"></div>
+  <script>
+    $(function() {
+      $( ".price-slider" ).slider({ range: true, min: 10, max: 1000,
+        values: [ 10, 1000 ],
+        slide: function( event, ui ) {
+          $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+        }
+      });
+      $( "#amount" ).val( "$" + $( ".price-slider" ).slider( "values", 0 ) +
+        " - $" + $( ".price-slider" ).slider( "values", 1 ) );
+    });
+  </script>
 </li>
