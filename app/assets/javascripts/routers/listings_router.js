@@ -14,20 +14,29 @@ Airfnf.Routers.ListingsRouter = Backbone.Router.extend({
     var callback = this.searchResults.bind(this, query);
     if (!this._requireSignedIn(callback)) { return; }
 
-    $.ajax({
-      url: "/api/listings/search?location=" + query,
-      method: "GET",
-      dataType: "json",
-      success: function (data) {
-        var resultsView = new Airfnf.Views.SearchResults({
-          //debugger;
-          collection: new Airfnf.Collections.Listings(data,
-          { location: query })
-        });
+    if (!Airfnf.currentSearch || Airfnf.currentSearch.location !== query) {
+      $.ajax({
+        url: "/api/listings/search?location=" + query,
+        method: "GET",
+        dataType: "json",
+        success: function (data) {
+          Airfnf.currentSearch = new Airfnf.Collections.Listings(data,
+            { location: query });
 
-        this._swapView(resultsView);
-      }.bind(this)
-    });
+          var resultsView = new Airfnf.Views.SearchResults({
+            collection: Airfnf.currentSearch
+          });
+
+          this._swapView(resultsView);
+        }.bind(this)
+      });
+    } else {
+      var resultsView = new Airfnf.Views.SearchResults({
+        collection: Airfnf.currentSearch
+      });
+
+      this._swapView(resultsView);
+    }
   },
 
   listingNew: function () {

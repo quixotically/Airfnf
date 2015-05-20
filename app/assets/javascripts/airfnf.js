@@ -9,6 +9,7 @@ window.Airfnf = {
     this.currentUser.fetch();
 
     this.header = new Airfnf.Views.Header({ el: "#header" });
+    //this.filters?
     new Airfnf.Routers.UsersRouter();
     new Airfnf.Routers.ListingsRouter();
     new Airfnf.Routers.RequestsRouter();

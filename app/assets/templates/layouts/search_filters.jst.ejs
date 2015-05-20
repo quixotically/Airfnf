@@ -1,0 +1,20 @@
+<li>
+  <h3>Accommodates</h3>
+  <select class="accommodates" name="search[accommodates]">
+    <% for(var i = 1; i <= 16; i++) { %>
+      <option value="<%= i %>"><%= i %></option>
+    <% } %>
+  </select>
+</li>
+<li>
+  <h3>Room Type</h3>
+    <select class="room-type" name="search[room_type]">
+      <option value="Entire home/apt">Entire place</option>
+      <option value="Private room">Private room</option>
+      <option value="Shared room">Shared room</option>
+    </select>
+</li>
+<li>
+  <h3>Price Range</h3>
+  <input type="range" name="search[range]" min="10" max="1000">
+</li>
