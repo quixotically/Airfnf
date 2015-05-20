@@ -1,6 +1,6 @@
 class Api::ListingsController < Api::ApiController
   def search
-    @search_results = Listing.where("location = ?", params[:search])
+    @search_results = Listing.where("location = ?", params[:location])
   end
 
   def show

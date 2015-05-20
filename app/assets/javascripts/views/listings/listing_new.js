@@ -15,7 +15,8 @@ Airfnf.Views.ListingNew = Backbone.View.extend({
     this.model.set(formData);
     this.model.save({}, {
       success: function () {
-        Backbone.history.navigate("/listings/" + that.model.id, { trigger: true});
+        Backbone.history.navigate("/listings/" + that.model.id,
+          { trigger: true });
       },
 
       error: function () {
