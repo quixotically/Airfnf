@@ -11,9 +11,6 @@ Airfnf.Views.Home = Backbone.View.extend({
 
     Backbone.history.navigate("listings/search_results/" + location,
       { trigger: true });
-
-    // var blah = new Airfnf.Collections.Listings();
-    // blah.fetch({ data: { location: location }})
   },
 
   render: function () {

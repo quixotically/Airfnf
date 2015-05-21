@@ -49,12 +49,12 @@ By the end of this phase, users will be able to request to book a listing, and h
 ### Phase 4: Searching for Listings and Filtering (~2 days)
 I'll need to add a `search` route to the Listings controller. On the
 Backbone side, there will be a `SearchResults` composite view has `ListingsIndex` subview. This view will use plain old `listings`
-collections, but it will fetch from the new `search` route. The view will also be able to be filtered further. I will use Geocoder to implement map functionality.
+collections, but it will fetch from the new `search` route. The view will also be able to be filtered further.
 
 [Details][phase-four]
 
-### Phase 5: Reviewing Guests and Hosts (~2 days)
-I'll start by creating a Rails Review model. Then, I'll create Backbone Review models and collections and create Review subviews. By the end of this phase, hosts and guests will be able to review each other using a simple form in a Rails view.
+### Phase 5: Geocoder, Filepicker, and Oauth (~2 days)
+I'll start by looking up Google's Geocoding API to implement map functionality into my SearchResults view. Then, I'll use Filepicker to enable users to upload their own listings and profile pictures. Lastly, I will enable users to sign in through third party sites like Twitter.
 
 [Details][phase-five]
 

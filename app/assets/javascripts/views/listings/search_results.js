@@ -69,9 +69,9 @@ Airfnf.Views.SearchResults = Backbone.CompositeView.extend({
   inPriceRange: function (listing) {
     var max = this.$(".price-slider").slider("option", "max");
 
-    if ((this.existingFilters.price[0] <= listing.escape("price") &&
-      this.existingFilters.price[1] >= listing.escape("price")) ||
-         (this.existingFilters.price[1] === max && listing.escape("price") > max)) {
+    if ((this.existingFilters.price[0] <= listing.get("price") &&
+      this.existingFilters.price[1] >= listing.get("price")) ||
+         (this.existingFilters.price[1] === max && listing.get("price") > max)) {
       return true;
     }
 
@@ -79,7 +79,7 @@ Airfnf.Views.SearchResults = Backbone.CompositeView.extend({
   },
 
   inRoomTypes: function (listing) {
-    return _.contains(this.existingFilters.room_type, listing.escape("room_type"));
+    return _.contains(this.existingFilters.room_type, listing.get("room_type"));
   },
 
   inGuestRange: function (listing) {

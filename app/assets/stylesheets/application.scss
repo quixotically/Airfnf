@@ -11,7 +11,7 @@
  *= require_self
  */
 
-html, body, nav, section, article, ul, li,
+html, body, nav, section, article, ul, li, button,
 main, img, h1, h2, h3, p, strong, a, div, span {
   margin: 0;
   border: 0;
@@ -61,6 +61,15 @@ h2 {
 h3 {
   font-size: 28px;
   font-weight: 400;
+}
+
+button {
+  padding: 2px;
+  margin: 2px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  background: #eee;
+  border-radius: 5px;
 }
 
 // header
@@ -137,6 +146,20 @@ h3 {
   margin: 40px;
 }
 
+// search
+
+.search-page-container {
+  // background: black;
+  // display: block;
+}
+
+// search sidebar
+
+.sidebar {
+  float: left;
+  width: 800px;
+}
+
 // slider
 
 p > .amount {
@@ -161,4 +184,13 @@ p > .amount {
 .price-slider .ui-slider-handle {
   border-radius: 50%;
   top: -9px;
+}
+
+// search map
+
+.map-canvas {
+  display: block;
+  float: left;
+  width: 200px;
+  height: 800px;
 }

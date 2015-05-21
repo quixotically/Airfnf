@@ -6,7 +6,6 @@ default: &default
 development:
   <<: *default
   database: Capstone_Felicia_Wong_development
-#  timeout: 5000
 
 # test:
 #   <<: *default
