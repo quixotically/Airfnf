@@ -1,4 +1,6 @@
 class Api::ListingsController < Api::ApiController
+  wrap_parameters false
+
   def search
     @search_results = Listing.where("location = ?", params[:location])
   end
