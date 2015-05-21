@@ -29,8 +29,6 @@ Airfnf.Views.UserNew = Backbone.View.extend({
   },
 
   fileInputChange: function (event) {
-    console.log(event.currentTarget.files[0]);
-
     var that = this;
     var file = event.currentTarget.files[0];
     var reader = new FileReader();
@@ -38,7 +36,6 @@ Airfnf.Views.UserNew = Backbone.View.extend({
     reader.onloadend = function () {
       that._updatePreview(reader.result);
       that.model._avatar = reader.result;
-      console.log(that.model);
     }
 
     if (file) {
@@ -46,7 +43,6 @@ Airfnf.Views.UserNew = Backbone.View.extend({
     } else {
       that._updatePreview("");
       delete that.model._avatar;
-      console.log(that.model);
     }
   },
 
