@@ -32,6 +32,7 @@ Airfnf.Routers.ListingsRouter = Backbone.Router.extend({
         }.bind(this)
       });
     } else {
+      //debugger;
       var search = new Airfnf.Collections.Listings(Airfnf.currentSearch.clone(),
         { location: query });
       var resultsView = new Airfnf.Views.SearchResults({

@@ -5,7 +5,9 @@ Airfnf.Collections.Listings = Backbone.Collection.extend({
 
   initialize: function (models, options) {
     //this.owner = options.owner;
-    this.location = options.location;
+    if (options.hasOwnProperty(location)) {
+      this.location = options.location;
+    }
   },
   // needed?
   getAndFetch: function (id) {

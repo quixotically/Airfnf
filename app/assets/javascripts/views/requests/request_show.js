@@ -32,6 +32,7 @@ Airfnf.Views.RequestShow = Backbone.View.extend({
     var content = this.template({
       request: this.model,
       owner: this.model.owner(),
+      requestor: this.model.requestor(),
       listing: this.model.listing()
     });
     this.$el.html(content);

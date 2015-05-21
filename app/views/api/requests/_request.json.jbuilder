@@ -9,3 +9,7 @@ end
 json.owner do
   json.username request.listing.owner.username
 end
+
+json.requestor do
+  json.username request.requestor.username
+end
