@@ -22,17 +22,20 @@ Airfnf.Routers.ListingsRouter = Backbone.Router.extend({
         success: function (data) {
           Airfnf.currentSearch = new Airfnf.Collections.Listings(data,
             { location: query });
-
+          var search = new Airfnf.Collections.Listings(data,
+            { location: query });
           var resultsView = new Airfnf.Views.SearchResults({
-            collection: Airfnf.currentSearch
+            collection: search
           });
 
           this._swapView(resultsView);
         }.bind(this)
       });
     } else {
+      var search = new Airfnf.Collections.Listings(Airfnf.currentSearch.clone(),
+        { location: query });
       var resultsView = new Airfnf.Views.SearchResults({
-        collection: Airfnf.currentSearch
+        collection: search
       });
 
       this._swapView(resultsView);

@@ -9,12 +9,13 @@ Airfnf.Views.SearchResults = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.addSubview('.filters', new Airfnf.Views.SearchFilters(), true);
-    // add reset event to both listeners?
+
     this.listenTo(this.collection, "add", this.addListingView);
     this.listenTo(this.collection, "remove", this.removeListingView);
-    //this.listenTo(this.collection, "reset", this.render);
     this.collection.each(this.addListingView.bind(this));
   },
+
+  // event methods
 
   udpatePrice: function (event) {
     event.preventDefault();
@@ -53,8 +54,9 @@ Airfnf.Views.SearchResults = Backbone.CompositeView.extend({
     this.existingFilters = $.extend({}, this.existingFilters, property);
   },
 
+  // filter methods
+
   filter: function () {
-    //debugger;
     var newListings = Airfnf.currentSearch.filter(function (listing) {
       if (this.inPriceRange(listing) && this.inRoomTypes(listing) && this.inGuestRange(listing)) {
         return listing;
@@ -62,7 +64,6 @@ Airfnf.Views.SearchResults = Backbone.CompositeView.extend({
     }.bind(this));
 
     this.collection.set(newListings);
-    //debugger;
   },
 
   inPriceRange: function (listing) {
@@ -85,6 +86,8 @@ Airfnf.Views.SearchResults = Backbone.CompositeView.extend({
     return this.existingFilters.accommodates <= listing.get("accommodates");
   },
 
+  // listing subview methods
+
   addListingView: function (listing) {
     var view = new Airfnf.Views.ListingShow({
       model: listing
@@ -98,7 +101,6 @@ Airfnf.Views.SearchResults = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    console.log("Render!");
     var content = this.template({
       location: this.collection.location
     });
