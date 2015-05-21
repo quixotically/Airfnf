@@ -1,4 +1,6 @@
-json.extract! @user, :id, :username, :email
+json.extract! @user, :id, :username, :email, :avatar, :created_at, :updated_at
+json.avatar_url asset_path(@user.avatar.url(:original))
+# @user.avatar.url(:original)
 
 json.listings @user.listings do |listing|
   json.partial! "api/listings/listing", listing: listing

@@ -2,7 +2,8 @@ Airfnf.Views.UserNew = Backbone.View.extend({
   template: JST["users/new"],
 
   events: {
-    'submit form': 'submit'
+    'submit form': 'submit',
+    'change #avatar': 'fileInputChange'
   },
 
   initialize: function () {
@@ -25,6 +26,32 @@ Airfnf.Views.UserNew = Backbone.View.extend({
         alert("Form invalid. Let the user know what went wrong.");
       }
     })
+  },
+
+  fileInputChange: function (event) {
+    console.log(event.currentTarget.files[0]);
+
+    var that = this;
+    var file = event.currentTarget.files[0];
+    var reader = new FileReader();
+
+    reader.onloadend = function () {
+      that._updatePreview(reader.result);
+      that.model._avatar = reader.result;
+      console.log(that.model);
+    }
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      that._updatePreview("");
+      delete that.model._avatar;
+      console.log(that.model);
+    }
+  },
+
+  _updatePreview: function (src) {
+    this.$el.find("#preview-avatar").attr("src", src);
   },
 
   render: function () {
