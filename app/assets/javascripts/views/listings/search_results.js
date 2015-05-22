@@ -1,19 +1,67 @@
 Airfnf.Views.SearchResults = Backbone.CompositeView.extend({
   template: JST["listings/search_results"],
 
+  // className: 'full-size',
+
   events: {
     'slidechange .price-slider': 'udpatePrice',
     'change input:checkbox': 'udpateRoomType',
     'change .accommodates': 'udpateGuests'
+    // 'click a.listing-name': 'panToListing',
+    // 'mouseenter .listing': 'startBounce',
+    // 'mouseleave .listing': 'stopBounce'
   },
 
   initialize: function () {
+    this.mapView = new Airfnf.Views.Map({
+      collection: this.collection
+    });
+
     this.addSubview('.filters', new Airfnf.Views.SearchFilters(), true);
 
-    this.listenTo(this.collection, "add", this.addListingView);
-    this.listenTo(this.collection, "remove", this.removeListingView);
-    this.collection.each(this.addListingView.bind(this));
+    // this.listenTo(this.collection, "add", this.addListingView);
+    // this.listenTo(this.collection, "remove", this.removeListingView);
+    // this.collection.each(this.addListingView.bind(this));
+    this.render();
   },
+
+  // startBounce: function (event) {
+  //   var listingId = $(event.currentTarget).children('a').data('listing-id');
+  //   this.mapView.startBounce(listingId);
+  // },
+  //
+  // stopBounce: function (event) {
+  //   var listingId = $(event.currentTarget).children('a').data('listing-id');
+  //   this.mapView.stopBounce(listingId);
+  // },
+  //
+  // destroyListing: function (event) {
+  //   var listingId = $(event.currentTarget).data('listing-id');
+  //   var listing = this.collection.get(listingId);
+  //   listing.destroy();
+  // },
+  //
+  // panToListing: function (event) {
+  //   var listingId = $(event.currentTarget).data('listing-id');
+  //   var marker = this.mapView._markers[listingId];
+  //   this.mapView._map.panTo(marker.getPosition());
+  // },
+  //
+  // render: function () {
+  //   // Because we set up the `mapView` here, we MUST NOT re-render this view.
+  //   var content = this.template();
+  //   this.$el.html(content);
+  //   this.$('.sidebar').html(this.listingsIndex.render().$el);
+  //   this.$('.map').html(this.mapView.$el);
+  //   this.mapView.initMap();
+  //   return this;
+  // },
+  //
+  // remove: function () {
+  //   Backbone.View.prototype.remove.call(this);
+  //   this.mapView.remove();
+  //   this.listingsIndex.remove();
+  // }
 
   // event methods
 
@@ -99,12 +147,13 @@ Airfnf.Views.SearchResults = Backbone.CompositeView.extend({
   removeListingView: function (listing) {
     this.removeModelSubview('.listings', listing);
   },
-  
+
   render: function () {
     var content = this.template({
       location: this.collection.location
     });
     this.$el.html(content);
+    this.$('.map').html(this.mapView.$el);
     this.attachSubviews();
     return this;
   }

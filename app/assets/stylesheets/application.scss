@@ -33,7 +33,7 @@ main, img, h1, h2, h3, p, strong, a, div, span {
   clear: both;
 }
 
-html, body, .map-canvas {
+html, body, #map-canvas {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -164,15 +164,32 @@ button:disabled {
 // search
 
 .search-page-container {
-  // background: black;
-  // display: block;
+  // map and sidebar are absolute, need to float for properties to show
+  //padding: 10px;
+}
+
+// search map
+
+.map {
+  height: 100%;
+  right: 0;
+  //padding-right: 10px;
+  position: absolute;
+  width: 40%;
+}
+
+#map-canvas {
+  display: block;
 }
 
 // search sidebar
 
 .sidebar {
-  float: left;
-  width: 800px;
+  border-right: thin solid black;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  width: 60%;
 }
 
 // slider
@@ -199,13 +216,4 @@ p > .amount {
 .price-slider .ui-slider-handle {
   border-radius: 50%;
   top: -9px;
-}
-
-// search map
-
-.map-canvas {
-  display: block;
-  float: left;
-  width: 200px;
-  height: 800px;
 }

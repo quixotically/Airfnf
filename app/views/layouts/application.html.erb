@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>CapstoneFeliciaWong</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  
-</head>
+  <head>
+    <title>CapstoneFeliciaWong</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <% if Rails.env.production? %>
+      <% api_key = "" %>
+    <% else %>
+      <% api_key = '' %>
+    <% end %>
+    <script type="text/javascript"
+          src="https://maps.googleapis.com/maps/api/js?<%= api_key %>"></script>
+  </head>
 <body>
   <%= yield %>
 </body>
