@@ -16,3 +16,4 @@ l1 = Listing.create!(owner_id: u1.id, room_type: 'Entire home/apt', price: 1000,
 l2 = Listing.create!(owner_id: u1.id, room_type: 'Shared room', price: 800, location: "New York", accommodates: 2, description: "Great place")
 l3 = Listing.create!(owner_id: u5.id, room_type: 'Private room', price: 1200, location: "New York", accommodates: 4, description: "Beautiful room")
 l4 = Listing.create!(owner_id: u5.id, room_type: 'Entire home/apt', price: 1000, location: "Richmond", accommodates: 7, description: "BEST place")
+l4 = Listing.create!(owner_id: u5.id, room_type: 'Private room', price: 200, location: "Richmond", accommodates: 2, description: "pretty good place")
