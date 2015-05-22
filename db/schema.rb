@@ -11,20 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150521161923) do
+ActiveRecord::Schema.define(version: 20150522131328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "listings", force: :cascade do |t|
-    t.integer  "owner_id",     null: false
-    t.string   "room_type",    null: false
-    t.integer  "price",        null: false
-    t.integer  "accommodates", null: false
-    t.string   "location",     null: false
+    t.integer  "owner_id",                     null: false
+    t.string   "room_type",                    null: false
+    t.integer  "price",                        null: false
+    t.integer  "accommodates",                 null: false
+    t.string   "location",                     null: false
     t.text     "description"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.boolean  "booked",       default: false
   end
 
   create_table "requests", force: :cascade do |t|
