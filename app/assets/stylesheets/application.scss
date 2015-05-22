@@ -72,6 +72,10 @@ button {
   border-radius: 5px;
 }
 
+button:disabled {
+  opacity: 0.5;
+}
+
 .avatar {
   margin: 0 auto;
   width: 150px;

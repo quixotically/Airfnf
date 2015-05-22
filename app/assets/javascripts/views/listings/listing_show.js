@@ -4,7 +4,7 @@ Airfnf.Views.ListingShow = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
-
+  
     this.collection = this.model.requests();
     this.listenTo(this.collection, "add", this.addListingRequestView);
     this.collection.each(this.addListingRequestView.bind(this));

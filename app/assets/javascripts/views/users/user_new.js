@@ -14,7 +14,7 @@ Airfnf.Views.UserNew = Backbone.View.extend({
     event.preventDefault();
     var $form = $(event.currentTarget);
     var userData = $form.serializeJSON().user;
-
+    
     this.model.set(userData);
     this.model.save({}, {
       success: function () {
