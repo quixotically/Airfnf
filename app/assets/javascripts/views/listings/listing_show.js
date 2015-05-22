@@ -4,24 +4,20 @@ Airfnf.Views.ListingShow = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
-  
+
     this.collection = this.model.requests();
     this.listenTo(this.collection, "add", this.addListingRequestView);
     this.collection.each(this.addListingRequestView.bind(this));
   },
 
   events: {
-    'click .request-to-book': 'addRequestFormView'
+    'click .request-to-book': 'addRequestFormView',
+    'click .view-listing': 'viewListing'
   },
 
-  addListingRequestView: function (request) {
-    var requestView = new Airfnf.Views.RequestShow({
-      model: request,
-      // collection: requests for listing
-      collection: this.collection
-    });
-
-    this.addSubview('.listing-requests', requestView);
+  viewListing: function (event) {
+    event.preventDefault();
+    Backbone.history.navigate("listings/" + this.model.id, { trigger: true });
   },
 
   addRequestFormView: function (event) {
@@ -35,6 +31,16 @@ Airfnf.Views.ListingShow = Backbone.CompositeView.extend({
     });
 
     this.addSubview('.request-new', this.requestNewView);
+  },
+
+  addListingRequestView: function (request) {
+    var requestView = new Airfnf.Views.RequestShow({
+      model: request,
+      // collection: requests for listing
+      collection: this.collection
+    });
+
+    this.addSubview('.listing-requests', requestView);
   },
 
   render: function () {
