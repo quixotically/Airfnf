@@ -14,7 +14,8 @@ class Request < ActiveRecord::Base
     transaction do
       self.status = "Approved"
       self.save!
-
+      self.listing.booked = true
+      self.listing.save!
       all_other_requests.update_all(status: "Denied")
     end
   end

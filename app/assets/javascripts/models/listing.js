@@ -8,16 +8,16 @@ Airfnf.Models.Listing = Backbone.Model.extend({
     // set after since is a part of the collection, could rewrite as if/else
     approved_request.set("status", "Approved");
 
-    this._booked = true;
+    this.set("booked", true);
   },
-
-  booked: function () {
-    if (!this._booked) {
-      this._booked = false;
-    }
-
-    return this._booked;
-  },
+  //
+  // booked: function () {
+  //   if (!this._booked) {
+  //     this._booked = false;
+  //   }
+  //
+  //   return this._booked;
+  // },
 
   requests: function () {
     if (!this._requests) {

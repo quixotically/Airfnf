@@ -9,7 +9,7 @@ Airfnf.Collections.Listings = Backbone.Collection.extend({
       this.location = options.location;
     }
   },
-  // needed?
+
   getAndFetch: function (id) {
     var listing = this.get(id);
     var that = this;
