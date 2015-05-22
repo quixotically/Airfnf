@@ -12,12 +12,19 @@ Airfnf.Views.ListingShow = Backbone.CompositeView.extend({
 
   events: {
     'click .request-to-book': 'addRequestFormView',
-    'click .view-listing': 'viewListing'
+    'click .view-listing': 'viewListing',
+    'click .back': 'back'
   },
 
   viewListing: function (event) {
     event.preventDefault();
     Backbone.history.navigate("listings/" + this.model.id, { trigger: true });
+  },
+
+  back: function (event) {
+    event.preventDefault();
+    //Backbone.history.history.back()
+    window.history.back();
   },
 
   addRequestFormView: function (event) {

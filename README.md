@@ -53,8 +53,8 @@ collections, but it will fetch from the new `search` route. The view will also b
 
 [Details][phase-four]
 
-### Phase 5: Geocoder, Filepicker, and Oauth (~2 days)
-I'll start by looking up Google's Geocoding API to implement map functionality into my SearchResults view. Then, I'll use Filepicker to enable users to upload their own listings and profile pictures. Lastly, I will enable users to sign in through third party sites like Twitter.
+### Phase 5: Maps, Filepicker, and Oauth (~2 days)
+I'll start by looking up the Google Maps API to implement map functionality into my SearchResults view. Then, I'll use Filepicker to enable users to upload their own listings and profile pictures. Lastly, I will enable users to sign in through third party sites like Twitter.
 
 [Details][phase-five]
 
