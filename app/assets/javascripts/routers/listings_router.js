@@ -28,7 +28,7 @@ Airfnf.Routers.ListingsRouter = Backbone.Router.extend({
             collection: search
           });
 
-          this._mapSwapView(resultsView);
+          this._swapView(resultsView);
         }.bind(this)
       });
     } else {
@@ -52,7 +52,7 @@ Airfnf.Routers.ListingsRouter = Backbone.Router.extend({
       model: listing
     });
 
-    this._swapView(view);
+    this._mapSwapView(view);
   },
 
   listingShow: function (id) {

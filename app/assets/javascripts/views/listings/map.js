@@ -14,7 +14,7 @@ Airfnf.Views.Map = Backbone.View.extend({
 
   initMap: function () {
     var mapOptions = {
-      center: { lat: 37.7833, lng: -122.4167 },
+      center: { lat: 40.6975, lng: -73.9797 },
       zoom: 12
     };
 

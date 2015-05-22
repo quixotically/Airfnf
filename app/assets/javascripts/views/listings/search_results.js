@@ -19,10 +19,10 @@ Airfnf.Views.SearchResults = Backbone.CompositeView.extend({
 
     this.addSubview('.filters', new Airfnf.Views.SearchFilters(), true);
 
-    // this.listenTo(this.collection, "add", this.addListingView);
-    // this.listenTo(this.collection, "remove", this.removeListingView);
-    // this.collection.each(this.addListingView.bind(this));
-    this.render();
+    this.listenTo(this.collection, "add", this.addListingView);
+    this.listenTo(this.collection, "remove", this.removeListingView);
+    this.collection.each(this.addListingView.bind(this));
+    //this.render();
   },
 
   // startBounce: function (event) {
