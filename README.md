@@ -11,15 +11,15 @@ Users can:
 - [x] Create accounts
 - [x] Create sessions (log in)
 - [x] Create listings
-- [ ] Request to book listings
-- [ ] Approve bookings
+- [x] Request to book listings
+- [x] Approve bookings
 - [ ] Review guests
 - [ ] Review hosts
 
 Anyone can:
-- [ ] Search for listings by Location, Date, and Guest Count
-- [ ] Filter search further by Room Type, Price Range, and Size
-- [ ] View listings
+- [x] Search for listings by Location
+- [x] Filter search further by Room Type, Price Range, and Accommodates
+- [x] View listings
 - [ ] Drag the map to reveal local listings
 
 ## Design Docs
@@ -67,7 +67,7 @@ I'll start by looking up Google's Geocoding API to implement map functionality i
 - [ ] View wish lists on user profiles
 - [ ] Instant book feature
 - [ ] Multiple sessions/session management
-- [ ] User avatars
+- [x] User avatars
 - [ ] Typeahead search bar
 
 [phase-one]: ./Proposal/docs/phases/phase1.md
