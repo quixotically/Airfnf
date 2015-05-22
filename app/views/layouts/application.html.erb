@@ -8,7 +8,7 @@
     <%= csrf_meta_tags %>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <% if Rails.env.production? %>
-      <% api_key = "" %>
+      <% api_key = "key=#{ ENV['google_key'] }" %>
     <% else %>
       <% api_key = '' %>
     <% end %>
