@@ -8,7 +8,6 @@ Airfnf.Views.SearchResults = Backbone.CompositeView.extend({
   },
 
   initialize: function () {
-    this.initializeGeocoder(this.collection.location);
     this.addSubview('.filters', new Airfnf.Views.SearchFilters(), true);
 
     this.listenTo(this.collection, "add", this.addListingView);
@@ -100,21 +99,7 @@ Airfnf.Views.SearchResults = Backbone.CompositeView.extend({
   removeListingView: function (listing) {
     this.removeModelSubview('.listings', listing);
   },
-
-  // Geocoder methods
-
-  // initializeGeocoder: function (location) {
-  //   geocoder = new google.maps.Geocoder();
-  //   var latlng = new google.maps.LatLng(-34.397, 150.644);
-  //   var mapOptions = {
-  //     zoom: 8,
-  //     center: latlng
-  //   }
-  //   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-  // },
-  // 
-  // <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
-
+  
   render: function () {
     var content = this.template({
       location: this.collection.location
