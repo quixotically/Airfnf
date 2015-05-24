@@ -2,12 +2,25 @@ Airfnf.Views.Header = Backbone.View.extend({
   template: JST["layouts/header"],
 
   events: {
-    'click #sign-out-link': 'signOut'
+    'click #sign-out-link': 'signOut',
+    'click #sign-up-link': 'signUp',
+    'click #sign-in-link': 'signIn'
   },
 
   initialize: function () {
     this.listenTo(Airfnf.currentUser, "signIn signOut", this.render);
     this.render();
+  },
+
+  signUp: function (event) {
+    event.preventDefault();
+    $(".modal").addClass("is-open");
+  },
+
+  signIn: function (event) {
+    event.preventDefault();
+    // not sign in - for focus
+    $(".modal").removeClass("is-open");
   },
 
   signOut: function (event) {
