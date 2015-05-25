@@ -1,6 +1,10 @@
 Airfnf.Views.Home = Backbone.View.extend({
   template: JST["home"],
 
+  initialize: function () {
+    this.listenTo(Airfnf.currentUser, "sync", Airfnf._removeModalView);
+  },
+
   events: {
     "click .search": "search"
   },

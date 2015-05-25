@@ -21,7 +21,6 @@ Airfnf.Views.UserNew = Backbone.View.extend({
     this.model.save({}, {
       success: function () {
         Airfnf.currentUser.fetch();
-        Airfnf._removeModalView();
         Backbone.history.navigate("", { trigger: true });
       },
 
