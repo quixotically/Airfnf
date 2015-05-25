@@ -5,7 +5,7 @@ Backbone.Router.prototype.sessionNew = function (callback) {
 		callback: callback
 	});
 
-	this._swapView(view);
+	Airfnf._swapModalView(view);
 }
 
 Backbone.Router.prototype._requireSignedIn = function (callback) {

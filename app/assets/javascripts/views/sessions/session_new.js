@@ -3,7 +3,8 @@ Airfnf.Views.SessionNew = Backbone.View.extend({
 
   events: {
     'submit form': 'submit',
-    'click .modal-close': 'cancel'
+    'click .modal-close': 'removeModalView',
+    'click #sign-up-link': 'signUp'
   },
 
   initialize: function (options) {
@@ -20,15 +21,27 @@ Airfnf.Views.SessionNew = Backbone.View.extend({
     Airfnf.currentUser.signIn({
       email: formData.email,
       password: formData.password,
+      success: function () {
+        Airfnf._removeModalView();
+      },
       error: function () {
         alert("Wrong username/password combination. Please try again.");
       }
     });
   },
 
-  cancel: function (event) {
+  signUp: function (event) {
     event.preventDefault();
-    $(".modal").removeClass("is-open");
+    var user = new Airfnf.Models.User();
+    var view = new Airfnf.Views.UserNew({
+      model: user
+    });
+    Airfnf._swapModalView(view);
+  },
+
+  removeModalView: function (event) {
+    event.preventDefault();
+    Airfnf._removeModalView();
   },
 
   signInCallback: function (event) {

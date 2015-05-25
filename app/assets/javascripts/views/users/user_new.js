@@ -4,7 +4,8 @@ Airfnf.Views.UserNew = Backbone.View.extend({
   events: {
     'submit form': 'submit',
     'change #avatar': 'fileInputChange',
-    'click .modal-close': 'cancel'
+    'click .modal-close': 'removeModalView',
+    'click #sign-in-link': 'signIn'
   },
 
   initialize: function () {
@@ -20,6 +21,7 @@ Airfnf.Views.UserNew = Backbone.View.extend({
     this.model.save({}, {
       success: function () {
         Airfnf.currentUser.fetch();
+        Airfnf._removeModalView();
         Backbone.history.navigate("", { trigger: true });
       },
 
@@ -27,6 +29,12 @@ Airfnf.Views.UserNew = Backbone.View.extend({
         alert("Form invalid. Let the user know what went wrong.");
       }
     })
+  },
+
+  signIn: function (event) {
+    event.preventDefault();
+    var view = new Airfnf.Views.SessionNew({ callback: false });
+    Airfnf._swapModalView(view);
   },
 
   fileInputChange: function (event) {
@@ -47,9 +55,9 @@ Airfnf.Views.UserNew = Backbone.View.extend({
     }
   },
 
-  cancel: function (event) {
+  removeModalView: function (event) {
     event.preventDefault();
-    $(".modal").removeClass("is-open");
+    Airfnf._removeModalView();
   },
 
   _updatePreview: function (src) {

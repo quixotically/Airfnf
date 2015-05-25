@@ -18,15 +18,13 @@ Airfnf.Views.Header = Backbone.View.extend({
     var view = new Airfnf.Views.UserNew({
       model: user
     });
-    $(".modal").html(view.render().$el);
-    $(".modal").addClass("is-open");
+    Airfnf._swapModalView(view);
   },
 
   signIn: function (event) {
     event.preventDefault();
-    var view = new Airfnf.Views.SessionNew();
-    $(".modal").html(view.render().$el);
-    $(".modal").addClass("is-open");
+    var view = new Airfnf.Views.SessionNew({ callback: false });
+    Airfnf._swapModalView(view);
   },
 
   signOut: function (event) {

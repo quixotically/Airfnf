@@ -5,8 +5,8 @@ Airfnf.Routers.UsersRouter = Backbone.Router.extend({
 
   routes: {
     '': 'home',
-    // 'users/new': 'userNew',
-    'users/:id': 'userShow'
+    'users/:id': 'userShow',
+    'session/new': 'sessionNew'
   },
 
   home: function () {
@@ -15,19 +15,7 @@ Airfnf.Routers.UsersRouter = Backbone.Router.extend({
 
     this._swapView(new Airfnf.Views.Home());
   },
-  // NOT NEEDED - modal takes care of this
-  // userNew: function () {
-  //   if (!this._requireSignedOut()) { return; }
-  //
-  //   var user = new Airfnf.Models.User();
-  //
-  //   var view = new Airfnf.Views.UserNew({
-  //     model: user
-  //   });
-  //
-  //   this._swapView(view);
-  // },
-  //
+
   userShow: function (id) {
     var callback = this.userShow.bind(this, id);
     if (!this._requireSignedIn(callback)) { return; }
