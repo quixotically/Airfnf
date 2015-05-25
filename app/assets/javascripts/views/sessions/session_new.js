@@ -2,7 +2,8 @@ Airfnf.Views.SessionNew = Backbone.View.extend({
   template: JST["sessions/new"],
 
   events: {
-    'submit form': 'submit'
+    'submit form': 'submit',
+    'click .modal-close': 'cancel'
   },
 
   initialize: function (options) {
@@ -23,6 +24,11 @@ Airfnf.Views.SessionNew = Backbone.View.extend({
         alert("Wrong username/password combination. Please try again.");
       }
     });
+  },
+
+  cancel: function (event) {
+    event.preventDefault();
+    $(".modal").removeClass("is-open");
   },
 
   signInCallback: function (event) {

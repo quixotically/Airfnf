@@ -13,8 +13,7 @@ Users can:
 - [x] Create listings
 - [x] Request to book listings
 - [x] Approve bookings
-- [ ] Review guests
-- [ ] Review hosts
+- [ ] See listing locations on a map
 
 Anyone can:
 - [x] Search for listings by Location

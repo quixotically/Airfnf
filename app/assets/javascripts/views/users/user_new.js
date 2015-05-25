@@ -3,7 +3,8 @@ Airfnf.Views.UserNew = Backbone.View.extend({
 
   events: {
     'submit form': 'submit',
-    'change #avatar': 'fileInputChange'
+    'change #avatar': 'fileInputChange',
+    'click .modal-close': 'cancel'
   },
 
   initialize: function () {
@@ -14,7 +15,7 @@ Airfnf.Views.UserNew = Backbone.View.extend({
     event.preventDefault();
     var $form = $(event.currentTarget);
     var userData = $form.serializeJSON().user;
-    
+
     this.model.set(userData);
     this.model.save({}, {
       success: function () {
@@ -44,6 +45,11 @@ Airfnf.Views.UserNew = Backbone.View.extend({
       that._updatePreview("");
       delete that.model._avatar;
     }
+  },
+
+  cancel: function (event) {
+    event.preventDefault();
+    $(".modal").removeClass("is-open");
   },
 
   _updatePreview: function (src) {

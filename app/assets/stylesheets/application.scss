@@ -12,7 +12,7 @@
  */
 
 html, body, nav, section, article, ul, li, button,
-main, img, h1, h2, h3, p, strong, a, div, span {
+main, img, h1, h2, h3, p, strong, a, div, span, footer {
   margin: 0;
   border: 0;
   padding: 0;
@@ -220,17 +220,33 @@ p > .amount {
 
 // modal
 
-// .modal .modal-screen {
-//   //display: block/none
-//   position: fixed;
-//   top, bottom, left, right: 0;
-//   z-index: 2;
-//   background: rgba(0, 0, 0, 0.8);
-// }
-//
-// .modal .modal-form {
-//   //display: block/none
-//   position: absolute;
-//   left: 50%;
-//   transform: translateX(-50%);
-// }
+.modal {
+  display: none;
+}
+
+.modal .modal-screen {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.modal .modal-form {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  z-index: 3;
+  transform: translateX(-50%);
+  width: 360px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+
+.modal.is-open {
+  display: block;
+}
