@@ -11,7 +11,7 @@
  *= require_self
  */
 
-html, body, nav, section, article, ul, li, button,
+html, body, nav, section, article, ul, li, button, fieldset,
 main, img, h1, h2, h3, p, strong, a, div, span, footer {
   margin: 0;
   border: 0;
@@ -54,6 +54,10 @@ img {
   display: block;
 }
 
+img[src=""] {
+  display: none;
+}
+
 h1 {
   font-size: 36px;
   font-weight: 700;
@@ -69,6 +73,10 @@ h3 {
   font-weight: 400;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 button {
   padding: 2px;
   margin: 2px;
@@ -76,6 +84,11 @@ button {
   border: 1px solid #ccc;
   background: #eee;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ccc;
 }
 
 button:disabled {
@@ -108,7 +121,6 @@ button:disabled {
 
 .header a {
   color: #fff;
-
 }
 
 .header ul {
@@ -224,7 +236,13 @@ p > .amount {
   display: none;
 }
 
-.modal .modal-screen {
+.modal.is-open {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.modal-screen {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -234,19 +252,38 @@ p > .amount {
   background: rgba(0, 0, 0, 0.8);
 }
 
-.modal .modal-form {
+.modal-form {
   position: absolute;
   top: 100px;
   left: 50%;
   z-index: 3;
   transform: translateX(-50%);
-  width: 360px;
+  width: 250px;
   padding: 20px;
   background: #fff;
   border-radius: 5px;
   border: 1px solid #000;
 }
 
-.modal.is-open {
+.modal-form label {
   display: block;
+  padding: 10px;
+}
+
+.modal-form input {
+  display: block;
+  width: 100%;
+}
+
+.modal-form .button-container {
+  padding-top: 10px;
+}
+
+.modal-form button {
+  background: #ED2737;
+  color: #fff;
+}
+
+.modal-form a {
+  color: #ED2737;
 }
