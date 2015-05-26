@@ -143,12 +143,7 @@ button:disabled {
   background: #12C2B7;
 }
 
-// main content
-
-.main {
-  margin: 50px auto;
-  text-align: center;
-}
+// listings
 
 .listing-new {
 
@@ -171,6 +166,69 @@ button:disabled {
 .listing-new-form > ul {
   display: block;
   margin: 40px;
+}
+
+// main content
+
+.main {
+  margin: 50px auto;
+  text-align: center;
+}
+
+// home
+
+.home {
+
+}
+
+.home h1 {
+  color: #fff;
+  font-size: 60px;
+  margin: 100px auto 5px auto;
+}
+
+.home h3 {
+  color: #fff;
+  font-size: 24px;
+  margin: 0 auto 100px auto;
+}
+
+.home .search-container {
+  padding-top: 100px;
+  position: relative;
+  width: 420px;
+  margin: 0 auto;
+}
+
+.home input {
+  float: left;
+  padding: 7px;
+  font-size: 16px;
+  width: 300px;
+}
+
+.home button {
+  float: left;
+  margin: 0;
+  padding: 10px 0;
+  background: #ED2737;
+  color: #fff;
+  width: 100px;
+  border-radius: 0;
+  border: 0;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background: image-url("venice.jpg");
+  background-size: cover;
+
+  background-repeat: no-repeat;
 }
 
 // search
