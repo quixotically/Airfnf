@@ -6,7 +6,6 @@ Airfnf.Views.Map = Backbone.View.extend({
 
   initialize: function () {
     this._markers = {};
-    //this.initMap();
 
     this.listenTo(this.collection, 'add', this.addMarker);
     this.listenTo(this.collection, 'remove', this.removeMarker);
@@ -72,7 +71,7 @@ Airfnf.Views.Map = Backbone.View.extend({
   //     lat: [sw.lat(), ne.lat()],
   //     lng: [sw.lng(), ne.lng()]
   //   };
-  //
+  //  // get filtered collection here
   //   this.collection.fetch({
   //     data: { filter_data: filterData }
   //   });

@@ -23,7 +23,6 @@ Airfnf.Views.ListingShow = Backbone.CompositeView.extend({
 
   back: function (event) {
     event.preventDefault();
-    //Backbone.history.history.back()
     window.history.back();
   },
 

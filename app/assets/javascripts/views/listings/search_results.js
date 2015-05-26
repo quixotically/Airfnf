@@ -46,16 +46,6 @@ Airfnf.Views.SearchResults = Backbone.CompositeView.extend({
     this.mapView._map.panTo(marker.getPosition());
   },
 
-  // render: function () {
-  //   // Because we set up the `mapView` here, we MUST NOT re-render this view.
-  //   var content = this.template();
-  //   this.$el.html(content);
-  //   this.$('.sidebar').html(this.listingsIndex.render().$el);
-  //   this.$('.map').html(this.mapView.$el);
-  //   this.mapView.initMap();
-  //   return this;
-  // },
-
   remove: function () {
     Backbone.View.prototype.remove.call(this);
     this.mapView.remove();
