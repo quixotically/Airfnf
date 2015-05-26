@@ -6,7 +6,7 @@ Airfnf.Views.Map = Backbone.View.extend({
 
   initialize: function () {
     this._markers = {};
-    this.initMap();
+    //this.initMap();
 
     this.listenTo(this.collection, 'add', this.addMarker);
     this.listenTo(this.collection, 'remove', this.removeMarker);

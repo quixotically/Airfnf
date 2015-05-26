@@ -153,6 +153,7 @@ Airfnf.Views.SearchResults = Backbone.CompositeView.extend({
     });
     this.$el.html(content);
     this.$('.map').html(this.mapView.$el);
+    this.mapView.initMap();
     this.attachSubviews();
     return this;
   }
