@@ -16,7 +16,7 @@
     <section class="listing-requests"></section>
     <button class="delete" data-id="<%= listing.escape("id") %>">Remove Listing</button>
   <% } else { %>
-    <button class="request-to-book" <%= listing.get("booked") ? "disabled": "" %>><%= listing.get("booked") ? "Unavailable": "Request to Book" %></button>
+    <button class="request-to-book" <%= listing.get("booked") || !Airfnf.currentUser.isSignedIn() ? "disabled": "" %>><%= listing.get("booked") ? "Unavailable": "Request to Book" %></button>
     <section class="request-new"></section>
   <% } %>
   <button class="view-listing">View Listing</button>

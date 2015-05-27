@@ -6,10 +6,6 @@ Airfnf._swapModalView = function (view) {
 }
 
 Airfnf._removeModalView = function () {
-  if (Airfnf.currentUser.isSignedIn()) {
-    Airfnf._modalView && Airfnf._modalView.remove();
-    $(".modal").removeClass("is-open");
-  } else {
-    alert("You must be signed in to continue.");
-  }
+  Airfnf._modalView && Airfnf._modalView.remove();
+  $(".modal").removeClass("is-open");
 }
