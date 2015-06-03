@@ -4,12 +4,20 @@ Airfnf.Views.SessionNew = Backbone.View.extend({
   events: {
     'submit form': 'submit',
     'click .modal-close': 'removeModalView',
-    'click #sign-up-link': 'signUp'
+    'click #sign-up-link': 'signUp',
+    'click .guest-sign-in': 'guestSignIn'
   },
 
   initialize: function (options) {
     this.callback = options.callback;
     this.listenTo(Airfnf.currentUser, "signIn", this.signInCallback);
+  },
+
+  guestSignIn: function (event) {
+    event.preventDefault();
+
+    $("#email").val("foo@foo.com");
+    $("#password").val("foofoo");
   },
 
   submit: function (event) {
