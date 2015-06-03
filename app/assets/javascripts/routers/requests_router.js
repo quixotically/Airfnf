@@ -9,7 +9,6 @@ Airfnf.Routers.RequestsRouter = Backbone.Router.extend({
 
   requestNew: function () {
     var callback = this.requestNew.bind(this);
-    //if (!this._requireSignedIn(callback)) { return; }
 
     var request = new Airfnf.Models.Request();
 

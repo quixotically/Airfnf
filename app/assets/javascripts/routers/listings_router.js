@@ -12,7 +12,6 @@ Airfnf.Routers.ListingsRouter = Backbone.Router.extend({
 
   searchResults: function (query) {
     var callback = this.searchResults.bind(this, query);
-    //if (!this._requireSignedIn(callback)) { return; }
 
     if (!Airfnf.currentSearch || Airfnf.currentSearch.location !== query) {
       $.ajax({
@@ -58,7 +57,6 @@ Airfnf.Routers.ListingsRouter = Backbone.Router.extend({
 
   listingShow: function (id) {
     var callback = this.listingShow.bind(this, id);
-    //if (!this._requireSignedIn(callback)) { return; }
 
     var listing = new Airfnf.Models.Listing({ id: id });
     listing.fetch();

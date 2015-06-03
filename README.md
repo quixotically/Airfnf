@@ -20,3 +20,9 @@ For each search, I fetch the collection of listings only once to improve runtime
 ### Approving requests
 
 In Rails, a request to approve a listing was accomplished using a transaction. In this transaction, the chosen request was approved while all others for the same listing were denied.
+
+## Next Steps
+
+- [ ] favicon
+- [ ] Repopulate local listings upon scrolling the map
+- [ ] Typeahead search bar
