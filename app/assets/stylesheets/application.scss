@@ -82,17 +82,24 @@ button {
   margin: 2px;
   font-size: 14px;
   border: 1px solid #ccc;
-  background: #eee;
+  background: #ED2737;
+  color: #fff;
   border-radius: 5px;
   cursor: pointer;
 }
 
 button:hover {
-  background: #ccc;
+  background: #ED5562;
 }
 
 button:disabled {
   opacity: 0.5;
+}
+
+.auto-fill {
+  padding: 5px;
+  font-size: 16px;
+  margin-top: 15px;
 }
 
 .avatar {
@@ -166,6 +173,20 @@ button:disabled {
 .listing-new-form > ul {
   display: block;
   margin: 40px;
+}
+
+.listing-new-form button {
+  padding: 5px;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.listing-new-form .fill {
+  background: #00761D;
+}
+
+.listing-new-form .fill:hover {
+  background: #1DB543;
 }
 
 // main content
@@ -333,9 +354,7 @@ p > .amount {
 }
 
 .modal-form .guest-sign-in {
-  padding: 5px;
-  font-size: 16px;
-  margin-top: 15px;
+
 }
 
 .modal-form .button-container {
@@ -343,8 +362,7 @@ p > .amount {
 }
 
 .modal-form button {
-  background: #ED2737;
-  color: #fff;
+
 }
 
 .modal-form a {

@@ -2,7 +2,18 @@ Airfnf.Views.ListingNew = Backbone.View.extend({
   template: JST["listings/new"],
 
   events: {
-    'submit form': 'submit'
+    'submit form': 'submit',
+    'click .fill': 'fillForm'
+  },
+
+  fillForm: function (event) {
+    event.preventDefault();
+
+    $("#shared").prop("checked", true);
+    $(".accommodates").val(5);
+    $("#location").val("New York");
+    $("#price").val(600);
+    $("textarea").val("Best place!");
   },
 
   submit: function (event) {
