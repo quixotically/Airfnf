@@ -10,7 +10,7 @@ Backbone.Router.prototype.sessionNew = function (callback) {
 
 Backbone.Router.prototype._requireSignedIn = function (callback) {
 	if (!Airfnf.currentUser.isSignedIn()) {
-		alert("You must be signed in to perform that action");
+		Airfnf._flashMessage("You must be signed in to perform that action", "error");
 		callback = callback || this._goHome.bind(this);
 		this.sessionNew(callback);
 		return false;
