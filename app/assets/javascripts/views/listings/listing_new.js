@@ -30,8 +30,9 @@ Airfnf.Views.ListingNew = Backbone.View.extend({
           { trigger: true });
       },
 
-      error: function () {
-        alert("Form invalid. Let the user know what went wrong.");
+      error: function (listing, resp) {
+        var errors = resp.responseJSON;
+        Airfnf._flashMessage(errors, "error");
       }
     })
   },

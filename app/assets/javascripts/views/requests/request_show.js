@@ -22,6 +22,7 @@ Airfnf.Views.RequestShow = Backbone.View.extend({
       method: "POST",
       dataType: "json",
       success: function () {
+        Airfnf._flashMessage("Request approved!", "success");
         this.model.listing().book(this.model, this.collection);
         this.render();
       }.bind(this)

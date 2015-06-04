@@ -31,6 +31,7 @@ Airfnf.Views.Header = Backbone.View.extend({
     event.preventDefault();
     Airfnf.currentUser.signOut({
       success: function () {
+        Airfnf._flashMessage("You are now signed out", "success");
         Backbone.history.navigate("", { trigger: true });
       }
     });
