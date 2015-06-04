@@ -47,7 +47,11 @@ Airfnf.Views.UserShow = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    var content = this.template({ user: this.model });
+    var content = this.template({
+      user: this.model,
+      listings: this.collection,
+      requests: this.requests
+    });
     this.$el.html(content);
     this.attachSubviews();
     return this;

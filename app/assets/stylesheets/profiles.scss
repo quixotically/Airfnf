@@ -1,0 +1,26 @@
+.listings-and-requests {
+  width: 100%;
+  padding: 50px;
+}
+
+.listings-container {
+  float: left;
+  width: 50%;
+}
+
+.listings-container .listings {
+  text-align: left;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.requests-container {
+  float: right;
+  width: 50%;
+}
+
+.requests-container .requests {
+  text-align: left;
+  width: 300px;
+  margin: 0 auto;
+}

@@ -11,4 +11,8 @@ l1 = Listing.create!(owner_id: u1.id, room_type: 'Entire home/apt', price: 1000,
 l2 = Listing.create!(owner_id: u1.id, room_type: 'Shared room', price: 800, location: "New York", accommodates: 2, description: "Great place")
 l3 = Listing.create!(owner_id: u5.id, room_type: 'Private room', price: 1200, location: "New York", accommodates: 4, description: "Beautiful room")
 l4 = Listing.create!(owner_id: u5.id, room_type: 'Entire home/apt', price: 1000, location: "Richmond", accommodates: 7, description: "BEST place")
-l4 = Listing.create!(owner_id: u5.id, room_type: 'Private room', price: 200, location: "Richmond", accommodates: 2, description: "pretty good place")
+l5 = Listing.create!(owner_id: u5.id, room_type: 'Private room', price: 200, location: "Richmond", accommodates: 2, description: "pretty good place")
+l6 = Listing.create!(owner_id: u2.id, room_type: 'Shared room', price: 400, location: "Richmond", accommodates: 3, description: "Great room!")
+
+r1 = Request.create!(requestor_id: u1.id, listing_id: l3.id, start_date: "2017-06-20", end_date: "2017-06-27")
+r2 = Request.create!(requestor_id: u1.id, listing_id: l6.id, start_date: "2017-05-20", end_date: "2017-05-27")

@@ -1,8 +1,19 @@
 <h1>Hey, I'm <%= user.escape("username") %>!</h1>
 <div class="avatar"><img src="<%= user.get("avatar_url") %>" width="100"></div>
 
-<h2>Listings</h2>
-<ul class="listings"></ul>
-
-<h2>Your Requests</h2>
-<ul class="requests"></ul>
+<div class="listings-and-requests group">
+  <section class="listings-container">
+    <h2>Listings</h2>
+    <% if (listings.length === 0) { %>
+      You don't have any listings
+    <% } %>
+    <ul class="listings"></ul>
+  </section>
+  <section class="requests-container">
+    <h2>Your Requests</h2>
+    <% if (requests.length === 0) { %>
+      You haven't requested to book any listings
+    <% } %>
+    <ul class="requests"></ul>
+  </section>
+</div>

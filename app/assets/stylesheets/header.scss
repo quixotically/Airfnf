@@ -1,0 +1,40 @@
+.header .logo {
+  display: block;
+  // #px from inspecting height of .create-listing
+  padding-top: 38px;
+  height: 0;
+  overflow: hidden;
+  background: image-url("airfnf-logo.png");
+  background-size: 100px;
+
+  width: 100px;
+  float: left;
+}
+
+.header {
+  padding: 20px 20px;
+}
+
+.header a {
+  color: #fff;
+}
+
+.header ul {
+  float: right;
+}
+
+.header ul > a {
+  float: left;
+  margin: 10px 10px;
+}
+
+.header .create-listing {
+  display: block;
+  background: #0E948B;
+  padding: 10px 20px;
+  margin: 0 0 0 10px;
+}
+
+.header .create-listing:hover {
+  background: #12C2B7;
+}

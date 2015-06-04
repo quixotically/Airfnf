@@ -1,4 +1,6 @@
 Airfnf.Views.RequestShow = Backbone.View.extend({
+  tagName: "li",
+
   template: JST["requests/show"],
 
   events: {

@@ -1,0 +1,54 @@
+.search-page-container {
+  // map and sidebar are absolute, need to float for properties to show
+  //padding: 10px;
+}
+
+// search map
+
+.map {
+  height: 100%;
+  right: 0;
+  //padding-right: 10px;
+  position: absolute;
+  width: 40%;
+}
+
+#map-canvas {
+  display: block;
+}
+
+// search sidebar
+
+.sidebar {
+  border-right: thin solid black;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  width: 60%;
+}
+
+// slider
+
+p > .amount {
+  border: 0;
+  color: #ff8400;
+  width: 100px;
+  font-size: 14px;
+  font-weight: bold;
+  background: transparent;
+}
+
+.price-slider {
+  margin: auto auto;
+  height: 4px;
+  width: 500px;
+}
+
+.price-slider .ui-slider-range {
+  background: #ff0055;
+}
+
+.price-slider .ui-slider-handle {
+  border-radius: 50%;
+  top: -9px;
+}
