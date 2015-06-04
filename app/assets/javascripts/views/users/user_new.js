@@ -21,11 +21,13 @@ Airfnf.Views.UserNew = Backbone.View.extend({
     this.model.save({}, {
       success: function () {
         Airfnf.currentUser.fetch();
+        Airfnf._flashMessage("Successfully signed in as new user", "success");
         Backbone.history.navigate("", { trigger: true });
       },
 
-      error: function () {
-        alert("Form invalid. Let the user know what went wrong.");
+      error: function (user, resp) {
+        var errors = resp.responseJSON;
+        Airfnf._flashMessage(errors, "error");
       }
     })
   },

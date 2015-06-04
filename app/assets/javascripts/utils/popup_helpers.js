@@ -13,7 +13,12 @@ Airfnf._removeModalView = function () {
 Airfnf._flashMessage = function (msg, type) {
   type === "error" ? $("#flash").addClass("error") : $("#flash").addClass("success");
   $("#flash").removeClass("hidden");
-  $("#flash").html(msg);
+
+  if (msg instanceof Array) {
+    $("#flash").html(JST["layouts/errors"]({ msgs: msg }));
+  } else {
+    $("#flash").html(msg);
+  }
   window.setTimeout(function() {
     $("#flash").empty();
     $("#flash").removeClass("error success");
