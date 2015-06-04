@@ -21,6 +21,10 @@ For each search, I fetch the collection of listings only once to improve runtime
 
 In Rails, a request to approve a listing was accomplished using a transaction. In this transaction, the chosen request was approved while all others for the same listing were denied.
 
+### Flash messages
+
+I created a top-level method that accepts a message or an array of messages and a message type as arguments. Message type will determine whether the success or the error class is added to the HTML element, which affect styling. The function then renders the appropriate HTML, but only for a short time since I set a timeout. At timeout, I add back the hidden class and remove the error or success classes. I give the messages a fixed position and a positive z-index so that the user will be almost guaranteed to see them.
+
 ## Next Steps
 
 - [ ] favicon
