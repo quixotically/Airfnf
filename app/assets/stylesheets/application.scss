@@ -107,6 +107,36 @@ button:disabled {
   width: 150px;
 }
 
+.hidden {
+  display: none;
+}
+
+#flash.hidden {
+  display: none;
+}
+
+#flash {
+  //display: block;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  position: fixed;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  color: white;
+}
+
+#flash.error {
+  background: #ED5562;
+  border: 1px solid #ED2737;
+}
+
+#flash.success {
+  background: #1DB543;
+  border: 1px solid #00761D;
+}
+
 // header
 
 .header .logo {

@@ -31,9 +31,10 @@ Airfnf.Views.SessionNew = Backbone.View.extend({
       password: formData.password,
       success: function () {
         Airfnf._removeModalView();
+        Airfnf._flashMessage("Successfully signed in!", "success");
       },
       error: function () {
-        alert("Wrong username/password combination. Please try again.");
+        Airfnf._flashMessage("Wrong username/password combination. Please try again.", "error");
       }
     });
   },
