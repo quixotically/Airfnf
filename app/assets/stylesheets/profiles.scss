@@ -1,6 +1,42 @@
+.user-info {
+  background: #eee;
+  padding: 40px;
+}
+
+.avatar-container {
+  width: 25%;
+  // matches width of avatar
+  min-width: 200px;
+  float: left;
+}
+
+.avatar {
+  float: right;
+  width: 200px;
+}
+
+.user-description {
+  float: left;
+  width: 75%;
+  text-align: left;
+}
+
+.user-text {
+  padding-left: 40px;
+}
+
+.user-text > h1 {
+  padding-bottom: 20px;
+}
+
+.user-text > p {
+  width: 600px;
+}
+
 .listings-and-requests {
-  width: 100%;
+  width: 70%;
   padding: 50px;
+  margin: 0 auto;
 }
 
 .listings-container {
