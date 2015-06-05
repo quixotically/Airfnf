@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150522131328) do
+ActiveRecord::Schema.define(version: 20150605213706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,12 +21,16 @@ ActiveRecord::Schema.define(version: 20150522131328) do
     t.string   "room_type",                    null: false
     t.integer  "price",                        null: false
     t.integer  "accommodates",                 null: false
-    t.string   "location",                     null: false
+    t.string   "address",                      null: false
     t.text     "description"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.boolean  "booked",       default: false
+    t.float    "latitude"
+    t.float    "longitude"
   end
+
+  add_index "listings", ["latitude", "longitude"], name: "index_listings_on_latitude_and_longitude", unique: true, using: :btree
 
   create_table "requests", force: :cascade do |t|
     t.integer  "listing_id",                       null: false

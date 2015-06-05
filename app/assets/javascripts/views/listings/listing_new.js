@@ -11,7 +11,7 @@ Airfnf.Views.ListingNew = Backbone.View.extend({
 
     $("#shared").prop("checked", true);
     $(".accommodates").val(5);
-    $("#location").val("New York");
+    $("#address").val("598 Broadway New York, NY");
     $("#price").val(600);
     $("textarea").val("Best place!");
   },

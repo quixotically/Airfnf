@@ -2,7 +2,7 @@ class Api::ListingsController < Api::ApiController
   wrap_parameters false
 
   def search
-    @search_results = Listing.where("location = ?", params[:location])
+    @search_results = Listing.near(params[:location], 10, order: :distance)
   end
 
   def show
@@ -28,6 +28,6 @@ class Api::ListingsController < Api::ApiController
   private
 
     def listing_params
-      params.require(:listing).permit(:room_type, :price, :accommodates, :location, :description)
+      params.require(:listing).permit(:room_type, :price, :accommodates, :address, :description)
     end
 end

@@ -15,6 +15,7 @@ gem "paperclip", "~> 4.2"
 gem "aws-sdk", '~> 1.6'
 gem "figaro"
 gem "faker"
+gem "geocoder"
 
 group :development do
   gem 'annotate'
