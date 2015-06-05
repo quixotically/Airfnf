@@ -142,6 +142,9 @@ Airfnf.Views.SearchResults = Backbone.CompositeView.extend({
       location: this.collection.location
     });
     this.$el.html(content);
+    if (Airfnf.currentSearch.length === 0) {
+      this.$(".listings").html("<p>No listings at this location</p>");
+    }
     this.$('.map').html(this.mapView.$el);
     this.mapView.initMap();
     this.attachSubviews();

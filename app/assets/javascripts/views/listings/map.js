@@ -47,7 +47,7 @@ Airfnf.Views.Map = Backbone.View.extend({
   },
 
   createListing: function (event) {
-    var listing = new GoogleMapsDemo.Models.Listing({
+    var listing = new Airfnf.Models.Listing({
       lat: event.latLng.lat(),
       lng: event.latLng.lng()
     });
