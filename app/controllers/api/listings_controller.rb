@@ -2,7 +2,7 @@ class Api::ListingsController < Api::ApiController
   wrap_parameters false
 
   def search
-    @search_results = Listing.near(params[:location], 10, order: :distance)
+    @search_results = Listing.near(params[:location], 10, order: "distance")
   end
 
   def show

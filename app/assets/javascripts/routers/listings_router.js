@@ -4,7 +4,6 @@ Airfnf.Routers.ListingsRouter = Backbone.Router.extend({
   },
 
   routes: {
-    'listings': 'listingsIndex',
     'listings/new': 'listingNew',
     'listings/:id': 'listingShow',
     'listings/search_results/:query': 'searchResults'

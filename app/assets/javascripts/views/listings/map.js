@@ -12,15 +12,25 @@ Airfnf.Views.Map = Backbone.View.extend({
   },
 
   initMap: function () {
-    var mapOptions = {
-      center: { lat: 40.6975, lng: -73.9797 },
-      zoom: 12
-    };
+    var location = this.collection.location
+    var geocoder = new google.maps.Geocoder();
 
-    this._map = new google.maps.Map(this.el, mapOptions);
+    geocoder.geocode( { 'address': location }, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        var latlng = results[0].geometry.location;
+        var mapOptions = {
+          center: latlng,
+          zoom: 12
+        };
 
-    this.collection.each(this.addMarker.bind(this));
-    this.attachMapListeners();
+        this._map = new google.maps.Map(this.el, mapOptions);
+
+        this.collection.each(this.addMarker.bind(this));
+        this.attachMapListeners();
+      } else {
+        Airfnf._flashMessage("Geocode was not successful for the following reason: " + status, "error");
+      }
+    }.bind(this));
   },
 
   attachMapListeners: function () {
@@ -34,9 +44,9 @@ Airfnf.Views.Map = Backbone.View.extend({
     var view = this;
 
     var marker = new google.maps.Marker({
-      position: { lat: 40.6975, lng: -73.9797 },
+      position: { lat: listing.get('latitude'), lng: listing.get('longitude') },
       map: this._map,
-      title: listing.get('name')
+      title: listing.get('description')
     });
 
     google.maps.event.addListener(marker, 'click', function (event) {
@@ -47,6 +57,7 @@ Airfnf.Views.Map = Backbone.View.extend({
   },
 
   createListing: function (event) {
+    //debugger;
     var listing = new Airfnf.Models.Listing({
       lat: event.latLng.lat(),
       lng: event.latLng.lng()

@@ -7,9 +7,12 @@ u3 = User.create!(username: 'hi', email: 'hi@gmail.com', password: 'foofoo', ava
 u4 = User.create!(username: 'rex', email: 'rex@gmail.com', password: 'foofoo', avatar: File.open(path.join("watermelon-trex.jpg")))
 u5 = User.create!(username: 'doge', email: 'doge@gmail.com', password: 'foofoo', avatar: File.open(path.join("doge.png")))
 
-l1 = Listing.create!(owner_id: u1.id, room_type: 'Entire home/apt', price: 1000, address: "New York", accommodates: 10, description: "Awesome place")
-l2 = Listing.create!(owner_id: u1.id, room_type: 'Shared room', price: 800, address: "New York", accommodates: 2, description: "Great place")
-l3 = Listing.create!(owner_id: u5.id, room_type: 'Private room', price: 1200, address: "New York", accommodates: 4, description: "Beautiful room")
+# balthazar
+l1 = Listing.create!(owner_id: u1.id, room_type: 'Entire home/apt', price: 1000, address: "80 Spring St New York, NY 10012", accommodates: 10, description: "Awesome parisian food!")
+# Whole Foods Market
+l2 = Listing.create!(owner_id: u1.id, room_type: 'Shared room', price: 800, address: "95 E Houston St New York, NY 10002", accommodates: 2, description: "Natural and organic")
+# Doughnut Plant
+l3 = Listing.create!(owner_id: u5.id, room_type: 'Private room', price: 1200, address: "379 Grand St New York, NY 10002", accommodates: 4, description: "Gourmet doughnuts")
 l4 = Listing.create!(owner_id: u5.id, room_type: 'Entire home/apt', price: 1000, address: "Richmond", accommodates: 7, description: "BEST place")
 l5 = Listing.create!(owner_id: u5.id, room_type: 'Private room', price: 200, address: "Richmond", accommodates: 2, description: "pretty good place")
 l6 = Listing.create!(owner_id: u2.id, room_type: 'Shared room', price: 400, address: "Richmond", accommodates: 3, description: "Great room!")
