@@ -2,7 +2,8 @@ Airfnf.Views.RequestNew = Backbone.View.extend({
   template: JST["requests/new"],
 
   events: {
-    'submit form': 'book'
+    'submit form': 'book',
+    'click .hide': 'hide'
   },
 
   book: function (event) {
@@ -18,10 +19,14 @@ Airfnf.Views.RequestNew = Backbone.View.extend({
       },
 
       error: function (request, resp) {
-        var errors = resp.responseJSON;
-        Airfnf._flashMessage(errors, "error");
+        Airfnf._flashMessage("Cannot book a listing multiple times", "error");
       }
     });
+  },
+
+  hide: function (event) {
+    event.preventDefault();
+    this.remove();
   },
 
   render: function () {
