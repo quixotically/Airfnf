@@ -5,7 +5,7 @@ Airfnf.Collections.Listings = Backbone.Collection.extend({
 
   initialize: function (models, options) {
     //this.owner = options.owner;
-    if ("location" in options) {
+    if (typeof options != 'undefined' && "location" in options) {
       this.location = options.location;
     }
   },

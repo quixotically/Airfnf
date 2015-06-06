@@ -6,7 +6,6 @@ Airfnf.Views.Map = Backbone.View.extend({
 
   initialize: function () {
     this._markers = {};
-
     this.listenTo(this.collection, 'add', this.addMarker);
     this.listenTo(this.collection, 'remove', this.removeMarker);
   },
@@ -81,7 +80,7 @@ Airfnf.Views.Map = Backbone.View.extend({
     marker.setMap(null);
     delete this._markers[listing.id];
   },
-  // 
+  //
   // toggleBounce: function (id) {
   //   var marker = this._markers[id];
   //   marker.setAnimation(google.maps.Animation.BOUNCE);
