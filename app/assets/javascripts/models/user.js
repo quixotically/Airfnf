@@ -22,6 +22,15 @@ Airfnf.Models.User = Backbone.Model.extend({
     return this._requests;
   },
 
+  // hasBooked: function (listing) {
+  //   debugger;
+  //   if (this.requests().findWhere({listing_id: listing.id}).length === 1) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // },
+
   toJSON: function () {
     var json = { user: _.clone(this.attributes) };
 
