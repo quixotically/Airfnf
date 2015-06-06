@@ -1,4 +1,4 @@
-<li class="listing">
+<li class="listing" data-listing-id="<%= listing.escape("id") %>">
   <h3><%= listing.escape("description") %></h3>
 
   <p>
@@ -14,7 +14,7 @@
 
   <% if (Airfnf.currentUser.escape("id") === listing.escape("owner_id")) { %>
     <section class="listing-requests"></section>
-    <button class="delete" data-id="<%= listing.escape("id") %>">Remove Listing</button>
+    <button class="delete" data-listing-id="<%= listing.escape("id") %>">Remove Listing</button>
   <% } else { %>
     <button class="request-to-book" <%= listing.get("booked") || !Airfnf.currentUser.isSignedIn() ? "disabled": "" %>><%= listing.get("booked") ? "Unavailable": "Request to Book" %></button>
     <section class="request-new"></section>

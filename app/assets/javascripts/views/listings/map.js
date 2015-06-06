@@ -26,17 +26,17 @@ Airfnf.Views.Map = Backbone.View.extend({
         this._map = new google.maps.Map(this.el, mapOptions);
 
         this.collection.each(this.addMarker.bind(this));
-        this.attachMapListeners();
+        //this.attachMapListeners();
       } else {
         Airfnf._flashMessage("Geocode was not successful for the following reason: " + status, "error");
       }
     }.bind(this));
   },
 
-  attachMapListeners: function () {
-    //google.maps.event.addListener(this._map, 'idle', this.search.bind(this));
-    google.maps.event.addListener(this._map, 'click', this.createListing.bind(this));
-  },
+  // attachMapListeners: function () {
+  //   //google.maps.event.addListener(this._map, 'idle', this.search.bind(this));
+  //   //google.maps.event.addListener(this._map, 'dragend', this.search.bind(this));
+  // },
 
   // Event handlers
   addMarker: function (listing) {
@@ -56,20 +56,6 @@ Airfnf.Views.Map = Backbone.View.extend({
     this._markers[listing.id] = marker;
   },
 
-  createListing: function (event) {
-    //debugger;
-    var listing = new Airfnf.Models.Listing({
-      lat: event.latLng.lat(),
-      lng: event.latLng.lng()
-    });
-
-    listing.save({}, {
-      success: function () {
-        this.collection.add(listing);
-      }.bind(this)
-    });
-  },
-
   // search: function () {
   //   // This method will re-fetch the map's collection, using the
   //   // map's current bounds as constraints on latitude/longitude.
@@ -82,10 +68,12 @@ Airfnf.Views.Map = Backbone.View.extend({
   //     lat: [sw.lat(), ne.lat()],
   //     lng: [sw.lng(), ne.lng()]
   //   };
-  //  // get filtered collection here
-  //   this.collection.fetch({
-  //     data: { filter_data: filterData }
-  //   });
+  //   // get new collection here
+  //   // Airfnf.currentSearch.set()
+  //   // Airfnf.currentSearch.fetch()
+  //   // this.collection.fetch({
+  //   //   data: { filter_data: filterData }
+  //   // });
   // },
 
   removeMarker: function (listing) {
@@ -93,6 +81,14 @@ Airfnf.Views.Map = Backbone.View.extend({
     marker.setMap(null);
     delete this._markers[listing.id];
   },
+  // 
+  // toggleBounce: function (id) {
+  //   var marker = this._markers[id];
+  //   marker.setAnimation(google.maps.Animation.BOUNCE);
+  //   window.setTimeout(function() {
+  //     marker.setAnimation(null);
+  //   }, 750);
+  // },
 
   showMarkerInfo: function (event, marker) {
     var infoWindow = new google.maps.InfoWindow({
@@ -100,15 +96,5 @@ Airfnf.Views.Map = Backbone.View.extend({
     });
 
     infoWindow.open(this._map, marker);
-  },
-
-  startBounce: function (id) {
-    var marker = this._markers[id];
-    //marker.setAnimation(google.maps.Animation.BOUNCE);
-  },
-
-  stopBounce: function (id) {
-    var marker = this._markers[id];
-  //  marker.setAnimation(null);
   }
 });

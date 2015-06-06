@@ -7,9 +7,10 @@ Airfnf.Views.SearchResults = Backbone.CompositeView.extend({
     'slidechange .price-slider': 'udpatePrice',
     'change input:checkbox': 'udpateRoomType',
     'change .accommodates': 'udpateGuests',
-    'click a.listing-name': 'panToListing',
-    'mouseenter .listing': 'startBounce',
-    'mouseleave .listing': 'stopBounce'
+    'click .listing': 'panToListing'
+    // toggle on descr:hover, text-decoration: underline
+    // 'mouseenter .listing': 'toggleBounce'
+    // 'mouseleave .listing': 'toggleBounce'
   },
 
   initialize: function () {
@@ -23,22 +24,12 @@ Airfnf.Views.SearchResults = Backbone.CompositeView.extend({
     this.listenTo(this.collection, "remove", this.removeListingView);
     this.collection.each(this.addListingView.bind(this));
   },
+  // flickers in Chrome 16
+  // toggleBounce: function (event) {
+  //   var listingId = $(event.currentTarget).data('listing-id');
+  //   this.mapView.toggleBounce(listingId);
+  // },
 
-  startBounce: function (event) {
-    var listingId = $(event.currentTarget).children('a').data('listing-id');
-    this.mapView.startBounce(listingId);
-  },
-
-  stopBounce: function (event) {
-    var listingId = $(event.currentTarget).children('a').data('listing-id');
-    this.mapView.stopBounce(listingId);
-  },
-
-  destroyListing: function (event) {
-    var listingId = $(event.currentTarget).data('listing-id');
-    var listing = this.collection.get(listingId);
-    listing.destroy();
-  },
 
   panToListing: function (event) {
     var listingId = $(event.currentTarget).data('listing-id');
