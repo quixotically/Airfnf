@@ -28,6 +28,7 @@ class Api::ListingsController < Api::ApiController
   private
 
     def listing_params
-      params.require(:listing).permit(:room_type, :price, :accommodates, :address, :description)
+      params.require(:listing).permit(:room_type, :price, :accommodates,
+        :address, :description, :pic)
     end
 end
