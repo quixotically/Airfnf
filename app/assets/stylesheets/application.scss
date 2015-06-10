@@ -96,6 +96,11 @@ button:disabled {
   opacity: 0.5;
 }
 
+button:hover:disabled {
+  cursor: default;
+  background: #ED2737;
+}
+
 .auto-fill {
   padding: 5px;
   font-size: 16px;
