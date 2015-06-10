@@ -32,6 +32,11 @@ Airfnf.Models.Listing = Backbone.Model.extend({
 
   toJSON: function () {
     var json = { listing: _.clone(this.attributes) };
+
+    if (this._pic) {
+      json.listing.pic = this._pic;
+    }
+
     return json;
   },
 
