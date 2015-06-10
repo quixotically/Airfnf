@@ -6,7 +6,8 @@ Airfnf.Views.Home = Backbone.View.extend({
   },
 
   events: {
-    "click .search": "search"
+    "click .search": "search",
+    "keyup #search": "checkEnter"
   },
 
   search: function (event) {
@@ -17,9 +18,15 @@ Airfnf.Views.Home = Backbone.View.extend({
       { trigger: true });
   },
 
+  checkEnter: function(event){
+    if(event.keyCode == 13){
+      $(".search").click();
+    }
+  },
+
   render: function () {
     var content = this.template();
     this.$el.html(content);
     return this;
   }
-})
+});
