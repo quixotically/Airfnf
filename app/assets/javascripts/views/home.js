@@ -12,7 +12,7 @@ Airfnf.Views.Home = Backbone.View.extend({
 
   search: function (event) {
     event.preventDefault();
-    var location = $("input").val();
+    var location = $("#search").val();
 
     Backbone.history.navigate("listings/search_results/" + location,
       { trigger: true });

@@ -11,6 +11,32 @@
   float: left;
 }
 
+.header .search-bar-container {
+  width: 320px;
+  float: left;
+  padding: 5px;
+  margin-left: 20px;
+}
+
+.header input {
+  float: left;
+  padding: 2px;
+  font-size: 16px;
+  width: 200px;
+}
+
+.header button {
+  float: left;
+  margin: 0;
+  padding: 5px 0;
+  text-align: center;
+  background: #ED2737;
+  color: #fff;
+  width: 60px;
+  border-radius: 0;
+  border: 0;
+}
+
 .header {
   padding: 20px 20px;
 }

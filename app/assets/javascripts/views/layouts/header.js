@@ -4,7 +4,9 @@ Airfnf.Views.Header = Backbone.View.extend({
   events: {
     'click #sign-out-link': 'signOut',
     'click #sign-up-link': 'signUp',
-    'click #sign-in-link': 'signIn'
+    'click #sign-in-link': 'signIn',
+    'click .search-bar': 'search',
+    'keyup #search-bar': 'checkEnter'
   },
 
   initialize: function () {
@@ -35,6 +37,20 @@ Airfnf.Views.Header = Backbone.View.extend({
         Backbone.history.navigate("", { trigger: true });
       }
     });
+  },
+
+  search: function (event) {
+    event.preventDefault();
+    var location = $("#search-bar").val();
+
+    Backbone.history.navigate("listings/search_results/" + location,
+      { trigger: true });
+  },
+
+  checkEnter: function(event) {
+    if(event.keyCode == 13){
+      $(".search-bar").click();
+    }
   },
 
   render: function () {

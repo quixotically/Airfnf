@@ -1,4 +1,8 @@
 <a class="logo" href="#">Airfnf</a>
+<fieldset class="search-bar-container">
+  <input type="text" name="search" id="search-bar">
+  <button class="search-bar">Search</button>
+</fieldset>
 <ul class="group">
   <% if (Airfnf.currentUser.isSignedIn()) { %>
     <a href="#/users/<%= Airfnf.currentUser.id %>">Signed in as: <%= Airfnf.currentUser.escape("username") %></a>
