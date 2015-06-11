@@ -54,10 +54,28 @@
   padding: 5px;
   font-size: 16px;
   margin-top: 15px;
+  width: 100px;
 }
 
 .listing-new-form .fill {
+  // make it look like a button
+  // it's not a button to avoid conflict w 'submit form' event
   background: #00761D;
+  width: 100px;
+  display: block;
+  padding: 5px;
+  font-size: 16px;
+  margin: 15px auto 2px;
+  // margin: 2px;
+  // margin-top: 15px;
+  border: 1px solid #ccc;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.listing-new-form .fill:hover {
+  text-decoration: none;
 }
 
 .listing-new-form .fill:hover {

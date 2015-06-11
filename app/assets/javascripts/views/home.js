@@ -19,6 +19,7 @@ Airfnf.Views.Home = Backbone.View.extend({
   },
 
   checkEnter: function(event){
+    event.preventDefault();
     if(event.keyCode == 13){
       $(".search").click();
     }

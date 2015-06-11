@@ -15,6 +15,7 @@
   left: 0;
   right: 0;
   z-index: 2;
+  background: rgb(0, 0, 0);
   background: rgba(0, 0, 0, 0.8);
 }
 
@@ -42,7 +43,22 @@
 }
 
 .modal-form .guest-sign-in {
+  // make it look like a button
+  // it's not a button to avoid conflict w 'submit form' event
+  display: block;
+  padding: 5px;
+  font-size: 16px;
+  margin: 2px;
+  margin-top: 15px;
+  border: 1px solid #ccc;
+  background: #ED2737;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
+.modal-form .guest-sign-in:hover {
+  text-decoration: none;
 }
 
 .modal-form .button-container {
