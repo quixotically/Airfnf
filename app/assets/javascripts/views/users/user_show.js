@@ -14,15 +14,15 @@ Airfnf.Views.UserShow = Backbone.CompositeView.extend({
     this.requests.each(this.addRequestView.bind(this));
   },
 
-  events: {
-    'click .delete': 'deleteListing'
-  },
-
-  deleteListing: function (event) {
-    event.preventDefault();
-    var listing = this.collection.get($(event.currentTarget).attr("data-id"));
-    listing.destroy();
-  },
+  // events: {
+  //   'click .delete': 'deleteListing'
+  // },
+  //
+  // deleteListing: function (event) {
+  //   event.preventDefault();
+  //   var listing = this.collection.get($(event.currentTarget).attr("data-id"));
+  //   listing.destroy();
+  // },
 
   addListingItemView: function (listing) {
     var view = new Airfnf.Views.ListingItem({

@@ -12,18 +12,34 @@ Airfnf.Views.ListingShow = Backbone.CompositeView.extend({
 
   events: {
     'click .request-to-book': 'addRequestFormView',
-    'click .view-listing': 'viewListing',
-    'click .back': 'back'
+    'click .delete': 'deleteListing'
+    // 'click .view-listing': 'viewListing',
+    // 'click .back': 'back'
   },
 
-  viewListing: function (event) {
-    event.preventDefault();
-    Backbone.history.navigate("listings/" + this.model.id, { trigger: true });
-  },
+  // viewListing: function (event) {
+  //   event.preventDefault();
+  //   Backbone.history.navigate("listings/" + this.model.id, { trigger: true });
+  // },
+  //
+  // back: function (event) {
+  //   event.preventDefault();
+  //   window.history.back();
+  // },
 
-  back: function (event) {
+  deleteListing: function (event) {
     event.preventDefault();
-    window.history.back();
+
+    this.model.destroy({
+      success: function (listing, resp) {
+        Backbone.history.navigate("/users/" + Airfnf.currentUser.id,
+          { trigger: true });
+      },
+      error: function (listing, resp) {
+        var errors = resp.responseJSON;
+        Airfnf._flashMessage(errors, "error");
+      }
+    });
   },
 
   addRequestFormView: function (event) {
