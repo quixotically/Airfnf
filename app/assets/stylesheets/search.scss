@@ -25,6 +25,31 @@
   position: absolute;
   left: 0;
   width: 60%;
+  overflow: scroll;
+}
+
+.search-listings-container {
+  padding: 30px 20px;
+  overflow-x: hidden;
+}
+
+.listings {
+  margin-left: -12.5px;
+  margin-right: -12.5px;
+}
+
+.listings > .listing-item {
+  float: left;
+  width: 50%;
+  padding-left: 12.5px;
+  padding-right: 12.5px;
+  min-height: 1px;
+  margin-bottom: 12.5px;
+  box-sizing: border-box;
+}
+
+.listings > .listing-item > ul {
+
 }
 
 .listings > p {

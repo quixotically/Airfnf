@@ -20,9 +20,9 @@ Airfnf.Views.SearchResults = Backbone.CompositeView.extend({
 
     this.addSubview('.filters', new Airfnf.Views.SearchFilters(), true);
 
-    this.listenTo(this.collection, "add", this.addListingView);
-    this.listenTo(this.collection, "remove", this.removeListingView);
-    this.collection.each(this.addListingView.bind(this));
+    this.listenTo(this.collection, "add", this.addListingItemView);
+    this.listenTo(this.collection, "remove", this.removeListingItemView);
+    this.collection.each(this.addListingItemView.bind(this));
   },
   // flickers in Chrome 16
   // toggleBounce: function (event) {
@@ -116,15 +116,15 @@ Airfnf.Views.SearchResults = Backbone.CompositeView.extend({
 
   // listing subview methods
 
-  addListingView: function (listing) {
-    var view = new Airfnf.Views.ListingShow({
+  addListingItemView: function (listing) {
+    var view = new Airfnf.Views.ListingItem({
       model: listing
     });
 
     this.addSubview('.listings', view);
   },
 
-  removeListingView: function (listing) {
+  removeListingItemView: function (listing) {
     this.removeModelSubview('.listings', listing);
   },
 

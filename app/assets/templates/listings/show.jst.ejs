@@ -8,6 +8,9 @@
   </p>
 
   <ul>
+    <% if (Airfnf.currentUser.escape("id") !== listing.escape("owner_id")) { %>
+      <li>Owner: <%= listing.owner().escape("username") %></li>
+    <% } %>
     <li>Room type: <%= listing.escape("room_type") %></li>
     <li>Accommodates: <%= listing.escape("accommodates") %></li>
     <li>Price: $<%= listing.escape("price") %></li>

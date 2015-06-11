@@ -40,13 +40,15 @@ Airfnf.Views.ListingShow = Backbone.CompositeView.extend({
   },
 
   addListingRequestView: function (request) {
-    var requestView = new Airfnf.Views.RequestShow({
-      model: request,
-      // collection: requests for listing
-      collection: this.collection
-    });
+    if (Airfnf.currentUser.id === this.model.get("owner_id")) {
+      var requestView = new Airfnf.Views.RequestShow({
+        model: request,
+        // collection: requests for listing
+        collection: this.collection
+      });
 
-    this.addSubview('.listing-requests', requestView);
+      this.addSubview('.listing-requests', requestView);
+    }
   },
 
   render: function () {

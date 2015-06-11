@@ -5,9 +5,9 @@ Airfnf.Views.UserShow = Backbone.CompositeView.extend({
     this.listenTo(this.model, "sync", this.render);
 
     this.collection = this.model.listings();
-    this.listenTo(this.collection, "add", this.addListingView);
-    this.listenTo(this.collection, "remove", this.removeListingView);
-    this.collection.each(this.addListingView.bind(this));
+    this.listenTo(this.collection, "add", this.addListingItemView);
+    this.listenTo(this.collection, "remove", this.removeListingItemView);
+    this.collection.each(this.addListingItemView.bind(this));
 
     this.requests = this.model.requests();
     this.listenTo(this.requests, "add", this.addRequestView);
@@ -24,15 +24,15 @@ Airfnf.Views.UserShow = Backbone.CompositeView.extend({
     listing.destroy();
   },
 
-  addListingView: function (listing) {
-    var view = new Airfnf.Views.ListingShow({
+  addListingItemView: function (listing) {
+    var view = new Airfnf.Views.ListingItem({
       model: listing
     });
 
     this.addSubview('.listings', view);
   },
 
-  removeListingView: function (listing) {
+  removeListingItemView: function (listing) {
     this.removeModelSubview('.listings', listing);
   },
 

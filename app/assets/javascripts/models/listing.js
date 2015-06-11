@@ -10,6 +10,14 @@ Airfnf.Models.Listing = Backbone.Model.extend({
 
     this.set("booked", true);
   },
+
+  owner: function () {
+    if (!this._owner) {
+      this._owner = new Airfnf.Models.User();
+    }
+
+    return this._owner;
+  },
   //
   // booked: function () {
   //   if (!this._booked) {
@@ -44,6 +52,11 @@ Airfnf.Models.Listing = Backbone.Model.extend({
     if (resp.requests) {
       this.requests().set(resp.requests, { parse: true });
       delete resp.requests;
+    }
+
+    if (resp.owner) {
+      this.owner().set(resp.owner, { parse: true });
+      delete resp.owner;
     }
 
     return resp;
