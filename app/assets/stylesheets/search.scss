@@ -33,12 +33,12 @@
   overflow-x: hidden;
 }
 
-.listings {
+.search-listings-container .listings {
   margin-left: -12.5px;
   margin-right: -12.5px;
 }
 
-.listings > .listing-item {
+.search-listings-container .listings > .listing-item {
   float: left;
   width: 50%;
   padding-left: 12.5px;
@@ -48,8 +48,30 @@
   box-sizing: border-box;
 }
 
-.listings > .listing-item > ul {
+.search-listings-container .listings ul {
+  position: relative;
+}
 
+.search-listings-container .listings .price {
+  position: absolute;
+  left: 0;
+  bottom: 60px;
+  width: 80px;
+  text-align: center;
+  padding: 7px 10px;
+  font-size: 24px;
+  background: #ED2737;
+  color: #fff;
+}
+
+.search-listings-container .listings .price::after {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  content: "$"
 }
 
 .listings > p {
