@@ -30,11 +30,11 @@ Airfnf.Routers.ListingsRouter = Backbone.Router.extend({
         }.bind(this)
       });
     } else {
-        var search = new
-          Airfnf.Collections.Listings(Airfnf.currentSearch.models,
-          { location: query });
-        var resultsView = new Airfnf.Views.SearchResults({
-          collection: search
+      var search = new
+        Airfnf.Collections.Listings(Airfnf.currentSearch.models,
+        { location: query });
+      var resultsView = new Airfnf.Views.SearchResults({
+        collection: search
       });
 
       this._mapSwapView(resultsView);

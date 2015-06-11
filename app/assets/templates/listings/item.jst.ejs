@@ -1,5 +1,7 @@
 <ul>
-  <figure class="item"><img src="<%= listing.get("pic_url") %>"></figure>
+  <figure class="item" data-listing-id="<%= listing.escape("id") %>">
+    <img src="<%= listing.get("pic_url") %>">
+  </figure>
   <li class="price"><%= listing.escape("price") %></li>
   <li class="description"><%= listing.escape("description") %></li>
   <li class="room-type"><%= listing.escape("room_type") %></li>

@@ -1,13 +1,11 @@
 Airfnf.Views.SearchResults = Backbone.CompositeView.extend({
   template: JST["listings/search_results"],
 
-  // className: 'full-size',
-
   events: {
     'slidechange .price-slider': 'udpatePrice',
     'change input:checkbox': 'udpateRoomType',
     'change .accommodates': 'udpateGuests',
-    'click .listing': 'panToListing'
+    'mouseover .item': 'panToListing'
     // toggle on descr:hover, text-decoration: underline
     // 'mouseenter .listing': 'toggleBounce'
     // 'mouseleave .listing': 'toggleBounce'
@@ -19,7 +17,6 @@ Airfnf.Views.SearchResults = Backbone.CompositeView.extend({
     });
 
     this.addSubview('.filters', new Airfnf.Views.SearchFilters(), true);
-
     this.listenTo(this.collection, "add", this.addListingItemView);
     this.listenTo(this.collection, "remove", this.removeListingItemView);
     this.collection.each(this.addListingItemView.bind(this));

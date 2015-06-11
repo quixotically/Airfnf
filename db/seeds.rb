@@ -13,6 +13,8 @@ l1 = Listing.create!(owner_id: u1.id, room_type: 'Entire home/apt', price: 1000,
 l2 = Listing.create!(owner_id: u1.id, room_type: 'Shared room', price: 800, address: "95 E Houston St New York, NY 10002", accommodates: 2, description: "Natural and organic")
 # Doughnut Plant
 l3 = Listing.create!(owner_id: u5.id, room_type: 'Private room', price: 1200, address: "379 Grand St New York, NY 10002", accommodates: 4, description: "Gourmet doughnuts")
+# Brooklyn Museum
+# (insert here) 200 Eastern Parkway, Brooklyn, NY 
 l4 = Listing.create!(owner_id: u5.id, room_type: 'Entire home/apt', price: 1000, address: "Richmond", accommodates: 7, description: "BEST place")
 l5 = Listing.create!(owner_id: u5.id, room_type: 'Private room', price: 200, address: "Richmond", accommodates: 2, description: "pretty good place")
 l6 = Listing.create!(owner_id: u2.id, room_type: 'Shared room', price: 400, address: "Richmond", accommodates: 3, description: "Great room!")
