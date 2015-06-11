@@ -1,6 +1,5 @@
 class Listing < ActiveRecord::Base
-  # large: "1024x768>",
-  has_attached_file :pic, styles: { medium: "300x300>" },
+  has_attached_file :pic, styles: { medium: "300x300>", large: "1024x768>" },
     default_url: "venice.jpg"
   validates_attachment_content_type :pic, content_type: /\Aimage\/.*\Z/
 
