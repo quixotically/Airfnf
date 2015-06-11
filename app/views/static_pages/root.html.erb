@@ -1,4 +1,6 @@
 <div id="flash" class="hidden"></div>
+<div id="spinner" class="whirly-loader">Loading…</div>
+<section class="spinner-modal"></section>
 <header id="header" class="header group"></header>
 <main id="main" class="main"></main>
 <footer class="modal"></footer>
@@ -7,5 +9,16 @@
   $(document).ready(function () {
     <%= current_user_id = current_user.id if current_user %>
     Airfnf.initialize(<%= current_user_id %>);
+  });
+  var $loading = $('#spinner').hide();
+  $(document)
+    .ajaxStart(function () {
+      Airfnf._removeModalView();
+      $(".spinner-modal").addClass("is-open");
+      $loading.show();
+    })
+    .ajaxStop(function () {
+      $loading.hide();
+      $(".spinner-modal").removeClass("is-open");
   });
 </script>

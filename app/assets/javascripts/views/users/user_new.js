@@ -29,7 +29,7 @@ Airfnf.Views.UserNew = Backbone.View.extend({
         var errors = resp.responseJSON;
         Airfnf._flashMessage(errors, "error");
       }
-    })
+    });
   },
 
   signIn: function (event) {
