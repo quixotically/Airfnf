@@ -37,7 +37,14 @@
 .search-listings-container .listings {
   margin-left: -12.5px;
   margin-right: -12.5px;
+  // -moz-column-count: 1;
+  // -webkit-column-count: 1;
 }
+//
+// .search-listings-container .listings > li {
+//   column-break-before: always;
+// }
+
 
 .search-listings-container .listings > .listing-item {
   float: left;
@@ -51,6 +58,12 @@
 
 .search-listings-container .listings ul {
   position: relative;
+}
+
+// FIX - does not resize
+
+.search-listings-container .item > img{
+  height: 325px;
 }
 
 .search-listings-container .listings .price {
