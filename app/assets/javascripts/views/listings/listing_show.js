@@ -69,6 +69,9 @@ Airfnf.Views.ListingShow = Backbone.CompositeView.extend({
   render: function () {
     var content = this.template({ listing: this.model });
     this.$el.html(content);
+    if (this.collection.length === 0) {
+      this.$(".listing-requests-header").empty();
+    }
     this.attachSubviews();
     return this;
   }

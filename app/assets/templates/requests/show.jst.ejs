@@ -5,7 +5,7 @@
   <li>Description: <%= listing.escape("description") %></li>
   <li>Start Date: <%= request.escape("start_date") %></li>
   <li>End Date: <%= request.escape("end_date") %></li>
-  <li>Status: <%= request.escape("status") %></li>
+  <li class="status">Status: <%= request.escape("status") %></li>
   <% if (Airfnf.currentUser.escape("id") === listing.escape("owner_id")) { %>
     <button class="approve" <%= request.escape("status") === "Approved" ?  "disabled": "" %> >Approve</button>
   <% } %>

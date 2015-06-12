@@ -1,9 +1,22 @@
+.listing-requests-header {
+  margin: 20px auto;
+}
+
 .listing-requests {
   display: block;
 }
 
 .request {
   padding: 5px;
+  border-top: 1px solid #000;
+  width: 400px;
+  margin: 0 auto;
+  text-align: left;
+
+}
+
+.request .status {
+  font-weight: bold;
 }
 
 .request > li {
