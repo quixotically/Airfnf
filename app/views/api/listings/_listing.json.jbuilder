@@ -7,4 +7,6 @@ json.owner do
   json.username listing.owner.username
 end
 
-json.requests listing.requests, partial: "api/requests/request", as: :request
+if current_user.id == listing.owner_id
+  json.requests listing.requests, partial: "api/requests/request", as: :request
+end

@@ -14,7 +14,7 @@
   <% if (Airfnf.currentUser.id === user.id) { %>
     <section class="listings-container">
   <% } %>
-      <h2>Listings</h2>
+      <h2><%= Airfnf.currentUser.id === user.id ? "Your Listings": "Listings"%></h2>
       <% if (listings.length === 0) { %>
         You don't have any listings
       <% } %>
