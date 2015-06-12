@@ -54,6 +54,7 @@ Airfnf.Views.ListingShow = Backbone.CompositeView.extend({
     });
 
     this.addSubview('.request-new', this.requestNewView);
+    window.scrollTo(0, document.body.scrollHeight);
   },
 
   addListingRequestView: function (request) {
