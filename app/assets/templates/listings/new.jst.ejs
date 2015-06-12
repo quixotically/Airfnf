@@ -1,48 +1,55 @@
 <section class="listing-new">
-  <h1>List Your Space</h1>
-  <h3>Airfnf lets you meet new people by sharing your space and your food!</h3>
-
-  <form class="listing-new-form">
-    <ul>
+  <article class="form-description">
+    <h1>List Your Space</h1>
+    <h3>Airfnf lets you make money and meet new people by renting out your space!</h3>
+  </article>
+  <article class="form-container">
+    <form class="listing-new-form">
       <h3>Room Type</h3>
-        <label for="entire">Entire home/apt</label>
-        <input type="radio" name="listing[room_type]" value="Entire home/apt"
-          id="entire">
-
-        <label for="private">Private room</label>
-        <input type="radio" name="listing[room_type]" value="Private room"
-          id="private">
-
-        <label for="shared">Shared room</label>
-        <input type="radio" name="listing[room_type]" value="Shared room"
-          id="shared">
-    </ul>
-    <ul>
+      <ul class="radio-list group">
+        <li>
+          <input type="radio" name="listing[room_type]" value="Entire home/apt"
+            id="entire">
+          <label for="entire">Entire home/apt</label>
+        </li>
+        <li>
+          <input type="radio" name="listing[room_type]" value="Private room"
+            id="private">
+          <label for="private">Private room</label>
+        </li>
+        <li>
+          <input type="radio" name="listing[room_type]" value="Shared room"
+            id="shared">
+          <label for="shared">Shared room</label>
+        </li>
+      </ul>
       <h3>Accommodates</h3>
+      <ul>
         <select class="accommodates" name="listing[accommodates]">
           <% for(var i = 1; i <= 16; i++) { %>
             <option value="<%= i %>"><%= i %></option>
           <% } %>
         </select>
-    </ul>
-    <ul>
+      </ul>
       <h3>Address</h3>
+      <ul>
         <input type="text" name="listing[address]" value="" id="address">
-    </ul>
-    <ul>
+      </ul>
       <h3>Price $</h3>
+      <ul>
         <input type="text" name="listing[price]" value="" id="price">
-    </ul>
-    <ul>
+      </ul>
       <h3>Description</h3>
+      <ul>
         <textarea name="listing[description]" value=""></textarea>
-    </ul>
-    <ul>
-      <label for="pic">Picture</label>
-        <input type="file" name="listing[pic]" id="pic">
-        <img src="" id="preview-pic" width="50">
-    </ul>
-    <a class="fill auto-fill">Auto Fill</a>
-    <button>Submit</button>
-  </form>
+      </ul>
+      <ul>
+        <label for="pic">Picture</label>
+          <input type="file" name="listing[pic]" id="pic">
+          <img src="" id="preview-pic" width="50">
+      </ul>
+      <a class="fill auto-fill">Auto Fill</a>
+      <button>Submit</button>
+    </form>
+  </article>
 </section>

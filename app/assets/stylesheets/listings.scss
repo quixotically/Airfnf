@@ -31,23 +31,80 @@
 
 }
 
-.listing-new > h1 {
-  margin: 20px;
+.listing-new .form-description {
+  padding: 50px 0;
   color: #fff;
 }
 
-.listing-new > h3 {
-  margin: 20px;
+.listing-new .form-description h1 {
+  padding-bottom: 20px;
+}
+
+.listing-new .form-description h3 {
+  font-size: 18px;
+  color: #000;
+}
+
+.listing-new .form-container {
+
 }
 
 .listing-new-form {
   border-top: 1px solid #000;
-  margin: 40px;
+  width: 484px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 50px;
+}
+
+.listing-new-form input {
+  font-size: 16px;
+}
+
+.listing-new-form textarea {
+  font-size: 14px;
+}
+
+.listing-new-form h3 {
+  font-size: 18px;
 }
 
 .listing-new-form > ul {
   display: block;
-  margin: 40px;
+  margin-bottom: 15px;
+}
+
+.listing-new-form .radio-list {
+  border: 1px solid #000;
+}
+
+.listing-new-form > ul > li {
+  float: left;
+  position: relative;
+  width: 160px;
+  border-right: 1px solid #000;
+}
+
+.listing-new-form > ul > li:last-child {
+  border-right: none;
+}
+
+.listing-new-form li > label {
+  padding: 20px;
+  display: block;
+  background: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+
+.listing-new-form input[type="radio"] {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+}
+
+.listing-new-form input[type="radio"]:checked + label {
+  background: #ccc;
 }
 
 .listing-new-form button {
@@ -55,6 +112,7 @@
   font-size: 16px;
   margin-top: 15px;
   width: 100px;
+  text-align: center;
 }
 
 .listing-new-form .fill {
@@ -65,9 +123,7 @@
   display: block;
   padding: 5px;
   font-size: 16px;
-  margin: 15px auto 2px;
-  // margin: 2px;
-  // margin-top: 15px;
+  text-align: center;
   border: 1px solid #ccc;
   color: #fff;
   border-radius: 5px;
@@ -76,8 +132,5 @@
 
 .listing-new-form .fill:hover {
   text-decoration: none;
-}
-
-.listing-new-form .fill:hover {
   background: #1DB543;
 }

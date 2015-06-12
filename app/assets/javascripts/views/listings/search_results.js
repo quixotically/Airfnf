@@ -131,7 +131,7 @@ Airfnf.Views.SearchResults = Backbone.CompositeView.extend({
     });
     this.$el.html(content);
     if (Airfnf.currentSearch.length === 0) {
-      this.$(".listings").html("<p>No listings at this location</p>");
+      this.$(".listings").html("<p>No listings at this location. Hint: Try NYC or Paris</p>");
     }
     this.$('.map').html(this.mapView.$el);
     this.mapView.initMap();

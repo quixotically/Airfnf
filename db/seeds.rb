@@ -27,10 +27,10 @@ l14 = Listing.create!(owner_id: u4.id, room_type: 'Private room', price: 150, ad
 l15 = Listing.create!(owner_id: u5.id, room_type: 'Private room', price: 180, address: "15 John St New York, NY 10038", accommodates: 3, description: "Fun environment", pic: File.open(path.join("bed5.jpg")))
 
 # Paris
-l16 = Listing.create!(owner_id: u1.id, room_type: 'Entire home/apt', price: 9000, address: "20 Rue Saint-Martin 75004 Paris France", accommodates: 12, description: "Awesome place!", pic: File.open(path.join("apt1.jpg")))
+l16 = Listing.create!(owner_id: u1.id, room_type: 'Entire home/apt', price: 900, address: "20 Rue Saint-Martin 75004 Paris France", accommodates: 12, description: "Awesome place!", pic: File.open(path.join("apt1.jpg")))
 l17 = Listing.create!(owner_id: u2.id, room_type: 'Entire home/apt', price: 800, address: "6 Rue Geoffroy l'Angevin 75004 Paris France", accommodates: 14, description: "Great place to spend the weekend", pic: File.open(path.join("apt2.jpg")))
 l18 = Listing.create!(owner_id: u3.id, room_type: 'Entire home/apt', price: 700, address: "5 Rue Coq Héron 75001 Paris France", accommodates: 9, description: "The best around", pic: File.open(path.join("apt3.jpg")))
-l19 = Listing.create!(owner_id: u4.id, room_type: 'Shared room', price: 10, address: "27 Quai Branly 75007 Paris France", accommodates: 1, description: "Great room!", pic: File.open(path.join("apt4.jpg")))
+l19 = Listing.create!(owner_id: u4.id, room_type: 'Shared room', price: 10, address: "27 Quai Branly 75007 Paris France", accommodates: 1, description: "Great room!", pic: File.open(path.join("shared1.jpg")))
 l20 = Listing.create!(owner_id: u5.id, room_type: 'Shared room', price: 40, address: "61 Boulevard de Reuilly 75012 Paris France", accommodates: 1, description: "Warm and comfy", pic: File.open(path.join("shared2.jpg")))
 l21 = Listing.create!(owner_id: u1.id, room_type: 'Shared room', price: 50, address: "27 Rue de la Colonie 75013 Paris France", accommodates: 1, description: "Spacious", pic: File.open(path.join("shared3.jpg")))
 l22 = Listing.create!(owner_id: u2.id, room_type: 'Private room', price: 100, address: "6 Rue des Abbesses 75018 Paris France", accommodates: 2, description: "Memorable stay", pic: File.open(path.join("bed2.jpg")))
